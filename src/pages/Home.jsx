@@ -20,7 +20,7 @@ function Home() {
             DoneAt: "June 12, 2023, 11:21 PM",
             Type: "Buy",
             Size: "0.03",
-            pl: {status: "loss", amount: "$12"},
+            pl: { status: "loss", amount: "$12" },
             Symbol: "audusd",
         },
         {
@@ -29,7 +29,7 @@ function Home() {
             DoneAt: "June 13, 2023, 09:45 AM",
             Type: "Sell",
             Size: "0.10",
-            pl: {status: "profit", amount: "$30"},
+            pl: { status: "profit", amount: "$30" },
             Symbol: "eurusd",
         },
         {
@@ -38,7 +38,7 @@ function Home() {
             DoneAt: "June 14, 2023, 03:30 PM",
             Type: "Buy",
             Size: "0.05",
-            pl: {status: "profit", amount: "$322"},
+            pl: { status: "profit", amount: "$322" },
             Symbol: "gbpusd",
         },
         {
@@ -47,7 +47,7 @@ function Home() {
             DoneAt: "June 15, 2023, 07:15 PM",
             Type: "Sell",
             Size: "0.02",
-            pl: {status: "loss", amount: "$1090"},
+            pl: { status: "loss", amount: "$1090" },
             Symbol: "usdchf",
         },
         {
@@ -56,7 +56,7 @@ function Home() {
             DoneAt: "June 16, 2023, 12:00 PM",
             Type: "Buy",
             Size: "0.07",
-            pl: {status: "profit", amount: "$690"},
+            pl: { status: "profit", amount: "$690" },
             Symbol: "usdjpy",
         },
     ];
@@ -73,11 +73,12 @@ function Home() {
                     >
                         Overview
                     </button>
-                    <button
+                    <Link
+                        to="/transactions"
                         className={`text-sm px-4 py-2 font-medium hover:bg-stone-300/10 border-b-2 border-transparent opacity-50 hover:opacity-100`}
                     >
                         Transactions
-                    </button>
+                    </Link>
                     <button
                         className={`text-sm px-4 py-2 font-medium hover:bg-stone-300/10 border-b-2 border-transparent opacity-50 hover:opacity-100`}
                     >
@@ -346,10 +347,16 @@ function Home() {
                         <LuExternalLink />
                     </Link>
                     <div className=" w-full flex-1 h-full bg-white shadow-lg shadow-stone-600/10 flex flex-col gap-2 p-6">
-                        <div className="flex items-center justify-between w-full">
-                            <h1 className="text-sm text-text-color-black/60 font-medium">
+                        <div className="flex items-center justify-between w-full pb-2">
+                            <h1 className="text-xs text-text-color-black/60 font-medium">
                                 Recent Transactions History
                             </h1>
+                            <Link
+                                to="/transactions"
+                                className="text-xs text-text-color-black/50 font-medium w-fit h-fit flex items-center gap-1"
+                            >
+                                View all
+                            </Link>
                         </div>
                         <table class="w-full text-sm text-left table-auto">
                             <thead class="text-xs text-gray-700 uppercase border-b">
@@ -388,8 +395,8 @@ function Home() {
                                         <td class=" py-3">{transaction.Type}</td>
                                         <td class=" py-3">{transaction.Size}</td>
                                         <td class=" py-3">
-                                            {transaction.pl.status === 'profit' && <span className="text-green-600 font-medium">+{transaction.pl.amount}</span> }
-                                            {transaction.pl.status === 'loss' && <span className="text-red-500 font-medium">-{transaction.pl.amount}</span> }
+                                            {transaction.pl.status === 'profit' && <span className="text-green-600 font-medium">+{transaction.pl.amount}</span>}
+                                            {transaction.pl.status === 'loss' && <span className="text-red-500 font-medium">-{transaction.pl.amount}</span>}
                                         </td>
                                         <td class=" py-3">{transaction.Symbol}</td>
                                     </tr>
