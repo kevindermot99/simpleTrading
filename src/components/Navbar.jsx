@@ -6,7 +6,7 @@ function Navbar() {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 100 ? true : false);
+    const handleScroll = () => setScrolled(window.scrollY > 70 ? true : false);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
