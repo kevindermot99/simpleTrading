@@ -102,6 +102,8 @@ function Home() {
                                         colorBorder: "#00000000",
                                         colorBgContainer: "#e5e7eb70",
                                         colorBgTextHover: "red",
+                                        zIndexPopupBase: "1",
+                                        zIndexBase: "1"
                                     },
                                 }}
                             >
@@ -110,7 +112,6 @@ function Home() {
                                     style={{
                                         width: "120px",
                                         boxShadow: "none",
-                                        borderColor: "red",
                                     }}
                                     allowClear
                                     options={[
