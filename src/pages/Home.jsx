@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import { Select, ConfigProvider } from "antd";
 import CountUp from 'react-countup';
+import { LuArrowDownFromLine } from "react-icons/lu";
+import { TiArrowDownThick, TiArrowUpThick } from "react-icons/ti";
 
 function Home() {
     return (
@@ -24,8 +26,8 @@ function Home() {
                     </button>
                 </div>
             </div>
-            <div className="flex gap-2 w-full bg-transparent h-[200px] mt-[-50px] px-10 text-text-color-black">
-                <div className="w-1/3 bg-white shadow-lg shadow-stone-600/10 rounded-2xl flex flex-col p-8">
+            <div className="flex gap-2 w-full bg-transparent min-h-[200px] mt-[-50px] px-10 text-text-color-black">
+                <div className="w-1/3 h-fit bg-white shadow-lg shadow-stone-600/10 rounded-2xl flex flex-col p-6">
                     <div className="flex items-center justify-between w-full">
                         <h1 className="text-sm text-text-color-black/60 font-medium">
                             Total Balance
@@ -37,7 +39,7 @@ function Home() {
                                     colorPrimary: '#fff',
                                     borderRadius: 7,
                                     colorBorder: '#00000000',
-                                    colorBgContainer: '#e5e7eb50',
+                                    colorBgContainer: '#e5e7eb70',
                                     colorBgTextHover: "red"
                                 },
                             }}
@@ -61,11 +63,11 @@ function Home() {
                             />
                         </ConfigProvider>
                     </div>
-                    <div className="w-full">
+                    <div className="w-full py-3">
                         {/* Balance */}
                         <CountUp
                             start={0}
-                            end={32120.2}
+                            end={320.2}
                             duration={.9}
                             separator=","
                             decimals={2}
@@ -74,17 +76,27 @@ function Home() {
                         //   suffix=" left"
                         >
                             {({ countUpRef, start }) => (
-                                <div className="py-2">
+                                <div className="">
                                     <span className="py-2 text-3xl font-extrabold" ref={countUpRef} />
                                 </div>
                             )}
                         </CountUp>
+                        <p className="text-xs pt-1 text-text-color-black/60 font-medium "><span className="text-green-600">129%</span> increase for the last 7 days</p>
                     </div>
                     <div className="flex items-center gap-2 mt-5">
+                        {/* Deposit */}
                         <button
-                            className={`w-full text-sm px-4 py-2 rounded-md text-text-color-white font-semibold tracking-tight bg-button-color hover:bg-stone-300/10 border-b-2 border-transparent`}
+                            className={`w-full text-sm px-4 py-2 rounded-md text-text-color-white font-bold tracking-tight bg-button-color hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-1`}
                         >
-                            Leaders
+                            <TiArrowDownThick className="text-base" />
+                            Deposit
+                        </button>
+                        {/* withdraw */}
+                        <button
+                            className={`w-full text-sm px-4 py-2 rounded-md text-text-color-black font-medium tracking-tight bg-border-lines-light/70 hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-1`}
+                        >
+                            <TiArrowUpThick className="text-base" />
+                            Withdraw
                         </button>
                     </div>
                 </div>
