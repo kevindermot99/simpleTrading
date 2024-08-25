@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 
 function Home() {
   return (
-    <div>
+    <div className='bg-body-white w-full h-full min-h-svh'>
         <Navbar />
     </div>
   )
