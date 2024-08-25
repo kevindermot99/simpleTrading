@@ -19,6 +19,7 @@ export default {
         "text-color-white": "#f4f4f5",
         "text-color-black": "#27272a",
         "body": "#f4f4f9",
+        "border-lines-light": "#e5e7eb",
       },
     },
   },
