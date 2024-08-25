@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { LuBell, LuChevronDown, LuSearch, LuUser2 } from 'react-icons/lu'
 import { Link } from 'react-router-dom'
 
 function Navbar() {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 200 ? true : false);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className='h-[65px] px-16 border-b-[1px] border-border-lines-light w-full flex items-center justify-between text-text-color-black tracking-tight'>
+    <div className={`h-[65px] px-16 border-b-[1px]  w-full flex items-center justify-between tracking-tight transition-all ${scrolled ? 'text-text-color-black border-border-lines-light sticky top-0' : 'text-text-color-white border-transparent sticky top-[-100%]'} `}>
       {/* Logo & Links */}
       <div className='flex items-center h-fit w-fit gap-1'>
         <h1 className='font-bold text-3xl font-DMSerifText mr-4'>st.</h1>
