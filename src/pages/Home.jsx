@@ -32,81 +32,158 @@ function Home() {
                     </button>
                 </div>
             </div>
-            <div className="flex gap-2 w-full bg-transparent min-h-[200px] mt-[-50px] px-10 text-text-color-black">
-                <div className="w-1/3 h-fit bg-white shadow-lg shadow-stone-600/10 rounded-2xl flex flex-col p-6">
-                    <div className="flex items-center justify-between w-full">
-                        <h1 className="text-sm text-text-color-black/60 font-medium">
-                            Total Balance
-                        </h1>
-                        <ConfigProvider
-                            theme={{
-                                token: {
-                                    // Seed Token
-                                    colorPrimary: '#fff',
-                                    borderRadius: 7,
-                                    colorBorder: '#00000000',
-                                    colorBgContainer: '#e5e7eb70',
-                                    colorBgTextHover: "red"
-                                },
-                            }}
-                        >
-                            <Select
-                                defaultValue="USD"
-                                style={{ width: '120px', boxShadow: "none", borderColor: 'red' }}
-                                allowClear
-                                options={[
-                                    { value: 'USD', label: 'USD' },
-                                    { value: 'Bitcoin', label: 'Bitcoin' },
-                                    { value: 'Ethereum', label: 'Ethereum' },
-                                    { value: 'USDT', label: 'USDT' },
-                                    { value: 'USDC', label: 'USDC' },
-                                    { value: 'DAI', label: 'DAI' },
-                                    { value: 'BUSD', label: 'BUSD' },
-                                    { value: 'Ripple', label: 'Ripple' },
-                                    { value: 'Litecoin', label: 'Litecoin' },
-                                ]}
-                                placeholder="Currency"
-                            />
-                        </ConfigProvider>
+            <div className="flex gap-5 w-full bg-transparent min-h-[200px] mt-[-50px] px-10 text-text-color-black">
+                <div className="w-1/3 h-fit flex flex-col gap-5">
+                    {/* Balance */}
+                    <div className=" w-full h-fit bg-white shadow-lg shadow-stone-600/10 rounded-2xl flex flex-col p-6">
+                        <div className="flex items-center justify-between w-full">
+                            <h1 className="text-sm text-text-color-black/60 font-medium">
+                                Total Balance
+                            </h1>
+                            <ConfigProvider
+                                theme={{
+                                    token: {
+                                        // Seed Token
+                                        colorPrimary: '#fff',
+                                        borderRadius: 7,
+                                        colorBorder: '#00000000',
+                                        colorBgContainer: '#e5e7eb70',
+                                        colorBgTextHover: "red"
+                                    },
+                                }}
+                            >
+                                <Select
+                                    defaultValue="USD"
+                                    style={{ width: '120px', boxShadow: "none", borderColor: 'red' }}
+                                    allowClear
+                                    options={[
+                                        { value: 'USD', label: 'USD' },
+                                        { value: 'Bitcoin', label: 'Bitcoin' },
+                                        { value: 'Ethereum', label: 'Ethereum' },
+                                        { value: 'USDT', label: 'USDT' },
+                                        { value: 'USDC', label: 'USDC' },
+                                        { value: 'DAI', label: 'DAI' },
+                                        { value: 'BUSD', label: 'BUSD' },
+                                        { value: 'Ripple', label: 'Ripple' },
+                                        { value: 'Litecoin', label: 'Litecoin' },
+                                    ]}
+                                    placeholder="Currency"
+                                />
+                            </ConfigProvider>
+                        </div>
+                        <div className="w-full py-3">
+                            {/* Balance */}
+                            <CountUp
+                                start={0}
+                                end={320.2}
+                                duration={.9}
+                                separator=","
+                                decimals={2}
+                                decimal="."
+                                prefix="$ "
+                            //   suffix=" left"
+                            >
+                                {({ countUpRef, start }) => (
+                                    <div className="">
+                                        <span className="py-2 text-3xl font-extrabold" ref={countUpRef} />
+                                    </div>
+                                )}
+                            </CountUp>
+                            <p className="text-xs pt-1 text-text-color-black/60 font-medium "><span className="text-green-600">129%</span> increase for the last 7 days</p>
+                        </div>
+                        <div className="flex items-center gap-2 mt-5">
+                            {/* Deposit */}
+                            <button
+                                className={`w-full text-sm px-4 py-2 rounded-md text-text-color-white font-semibold tracking-tight bg-button-color hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-1`}
+                            >
+                                <TiArrowDownThick className="text-base" />
+                                Deposit
+                            </button>
+                            {/* withdraw */}
+                            <button
+                                className={`w-full text-sm px-4 py-2 rounded-md text-text-color-black font-semibold tracking-tight bg-border-lines-light/70 hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-1`}
+                            >
+                                <TiArrowUpThick className="text-base" />
+                                Withdraw
+                            </button>
+                        </div>
                     </div>
-                    <div className="w-full py-3">
-                        {/* Balance */}
-                        <CountUp
-                            start={0}
-                            end={320.2}
-                            duration={.9}
-                            separator=","
-                            decimals={2}
-                            decimal="."
-                            prefix="$ "
-                        //   suffix=" left"
-                        >
-                            {({ countUpRef, start }) => (
-                                <div className="">
-                                    <span className="py-2 text-3xl font-extrabold" ref={countUpRef} />
-                                </div>
-                            )}
-                        </CountUp>
-                        <p className="text-xs pt-1 text-text-color-black/60 font-medium "><span className="text-green-600">129%</span> increase for the last 7 days</p>
-                    </div>
-                    <div className="flex items-center gap-2 mt-5">
-                        {/* Deposit */}
-                        <button
-                            className={`w-full text-sm px-4 py-2 rounded-md text-text-color-white font-semibold tracking-tight bg-button-color hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-1`}
-                        >
-                            <TiArrowDownThick className="text-base" />
-                            Deposit
-                        </button>
-                        {/* withdraw */}
-                        <button
-                            className={`w-full text-sm px-4 py-2 rounded-md text-text-color-black font-semibold tracking-tight bg-border-lines-light/70 hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-1`}
-                        >
-                            <TiArrowUpThick className="text-base" />
-                            Withdraw
-                        </button>
+                    {/* Ads */}
+                    <div className=" w-full h-fit bg-white shadow-lg shadow-stone-600/10 rounded-2xl flex flex-col p-6">
+                        <div className="flex items-center justify-between w-full">
+                            <h1 className="text-sm text-text-color-black/60 font-medium">
+                                Total Balance
+                            </h1>
+                            <ConfigProvider
+                                theme={{
+                                    token: {
+                                        // Seed Token
+                                        colorPrimary: '#fff',
+                                        borderRadius: 7,
+                                        colorBorder: '#00000000',
+                                        colorBgContainer: '#e5e7eb70',
+                                        colorBgTextHover: "red"
+                                    },
+                                }}
+                            >
+                                <Select
+                                    defaultValue="USD"
+                                    style={{ width: '120px', boxShadow: "none", borderColor: 'red' }}
+                                    allowClear
+                                    options={[
+                                        { value: 'USD', label: 'USD' },
+                                        { value: 'Bitcoin', label: 'Bitcoin' },
+                                        { value: 'Ethereum', label: 'Ethereum' },
+                                        { value: 'USDT', label: 'USDT' },
+                                        { value: 'USDC', label: 'USDC' },
+                                        { value: 'DAI', label: 'DAI' },
+                                        { value: 'BUSD', label: 'BUSD' },
+                                        { value: 'Ripple', label: 'Ripple' },
+                                        { value: 'Litecoin', label: 'Litecoin' },
+                                    ]}
+                                    placeholder="Currency"
+                                />
+                            </ConfigProvider>
+                        </div>
+                        <div className="w-full py-3">
+                            {/* Balance */}
+                            <CountUp
+                                start={0}
+                                end={320.2}
+                                duration={.9}
+                                separator=","
+                                decimals={2}
+                                decimal="."
+                                prefix="$ "
+                            //   suffix=" left"
+                            >
+                                {({ countUpRef, start }) => (
+                                    <div className="">
+                                        <span className="py-2 text-3xl font-extrabold" ref={countUpRef} />
+                                    </div>
+                                )}
+                            </CountUp>
+                            <p className="text-xs pt-1 text-text-color-black/60 font-medium "><span className="text-green-600">129%</span> increase for the last 7 days</p>
+                        </div>
+                        <div className="flex items-center gap-2 mt-5">
+                            {/* Deposit */}
+                            <button
+                                className={`w-full text-sm px-4 py-2 rounded-md text-text-color-white font-semibold tracking-tight bg-button-color hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-1`}
+                            >
+                                <TiArrowDownThick className="text-base" />
+                                Deposit
+                            </button>
+                            {/* withdraw */}
+                            <button
+                                className={`w-full text-sm px-4 py-2 rounded-md text-text-color-black font-semibold tracking-tight bg-border-lines-light/70 hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-1`}
+                            >
+                                <TiArrowUpThick className="text-base" />
+                                Withdraw
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div className="w-2/3 bg-white shadow-lg shadow-stone-600/10 rounded-2xl grid gap-0 grid-cols-2 ">
+                <div className="w-2/3 h-fit bg-white shadow-lg shadow-stone-600/10 rounded-2xl grid gap-0 grid-cols-2 ">
                     {/* Profit */}
                     <div className="flex flex-col p-6 w-full h-fit border-r-[1px] border-b-[1px] ">
                         <div className="flex items-center justify-between w-full">
@@ -204,7 +281,7 @@ function Home() {
                     <div className="flex flex-col p-6 w-full h-fit">
                         <div className="flex items-center justify-between w-full">
                             <h1 className="text-sm text-text-color-black/60 font-medium">
-                                Marginf Level %
+                                Margin Level %
                             </h1>
                             <div className="rounded-lg bg-stone-600/5 p-2 ">
                                 <TbKeyframes className="text-stone-500 text-2xl" />
@@ -220,7 +297,7 @@ function Home() {
                                 // decimals={2}
                                 decimal="."
                                 // prefix="$ "
-                              suffix=" %"
+                                suffix=" %"
                             >
                                 {({ countUpRef, start }) => (
                                     <div className="">
