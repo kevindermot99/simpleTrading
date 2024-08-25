@@ -70,7 +70,7 @@ function Home() {
                             separator=","
                             decimals={2}
                             decimal="."
-                            prefix="$"
+                            prefix="$ "
                         //   suffix=" left"
                         >
                             {({ countUpRef, start }) => (
@@ -79,6 +79,13 @@ function Home() {
                                 </div>
                             )}
                         </CountUp>
+                    </div>
+                    <div className="flex items-center gap-2 mt-5">
+                        <button
+                            className={`w-full text-sm px-4 py-2 rounded-md text-text-color-white font-semibold tracking-tight bg-button-color hover:bg-stone-300/10 border-b-2 border-transparent`}
+                        >
+                            Leaders
+                        </button>
                     </div>
                 </div>
                 <div className="w-2/3 bg-white shadow-lg shadow-stone-600/10 rounded-2xl"></div>
