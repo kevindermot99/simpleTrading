@@ -210,7 +210,7 @@ function Home() {
                                 <TbKeyframes className="text-stone-500 text-2xl" />
                             </div>
                         </div>
-                        <div className="w-full pt-3">
+                        <div className="w-full pt-0">
                             {/* Balance */}
                             <CountUp
                                 start={0}
@@ -224,11 +224,11 @@ function Home() {
                             >
                                 {({ countUpRef, start }) => (
                                     <div className="">
-                                        <span className="py-2 text-2xl font-extrabold" ref={countUpRef} />
+                                        <span className=" text-2xl font-extrabold" ref={countUpRef} />
                                     </div>
                                 )}
                             </CountUp>
-                            <p className="text-xs pt-1 text-text-color-black/60 font-medium "><span className="text-green-600">73%</span> increase for the last 7 days</p>
+                            <p className="text-xs pt-2 text-text-color-black/60 font-medium "><span className="text-green-600">73%</span> increase for the last 7 days</p>
                         </div>
                     </div>
                 </div>
