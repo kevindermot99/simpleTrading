@@ -9,9 +9,15 @@ export default {
       fontFamily: {
         DMSans: ["DM Sans", "sans-serif"],
         Outfit: ["Outfit", "sans-serif"],
+        ArchivoBlack: ["Archivo Black", "sans-serif"],
+        Questrial: ["Questrial", "sans-serif"],
+        Urbanist: ["Urbanist", "sans-serif"],
+        Inter: ["Inter", "sans-serif"],
+        DMSerifText: ["DM Serif Text", "sans-serif"]
       },
       colors: {
-        "main-color": "#014dff",
+        "text-color-white": "#f4f4f5",
+        "text-color-black": "#27272a",
         "body": "#f4f4f9",
       },
     },
