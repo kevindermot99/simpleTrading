@@ -15,14 +15,19 @@ function Home() {
                 <h1 className=" font-medium text-xl">Welcome back, Petter!</h1>
                 <div className="flex items-center gap-1 my-3">
                     <button
-                        className={`text-sm px-4 py-2 hover:bg-stone-300/10 border-b-2 border-text-color-white`}
+                        className={`text-sm px-4 py-2 font-medium hover:bg-stone-300/10 border-b-2 border-text-color-white`}
                     >
                         Overview
                     </button>
                     <button
-                        className={`text-sm px-4 py-2 hover:bg-stone-300/10 border-b-2 border-transparent opacity-50 hover:opacity-100`}
+                        className={`text-sm px-4 py-2 font-medium hover:bg-stone-300/10 border-b-2 border-transparent opacity-50 hover:opacity-100`}
                     >
-                        Leaders
+                        Transactions
+                    </button>
+                    <button
+                        className={`text-sm px-4 py-2 font-medium hover:bg-stone-300/10 border-b-2 border-transparent opacity-50 hover:opacity-100`}
+                    >
+                        Invoices
                     </button>
                 </div>
             </div>
@@ -86,21 +91,134 @@ function Home() {
                     <div className="flex items-center gap-2 mt-5">
                         {/* Deposit */}
                         <button
-                            className={`w-full text-sm px-4 py-2 rounded-md text-text-color-white font-bold tracking-tight bg-button-color hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-1`}
+                            className={`w-full text-sm px-4 py-2 rounded-md text-text-color-white font-semibold tracking-tight bg-button-color hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-1`}
                         >
                             <TiArrowDownThick className="text-base" />
                             Deposit
                         </button>
                         {/* withdraw */}
                         <button
-                            className={`w-full text-sm px-4 py-2 rounded-md text-text-color-black font-medium tracking-tight bg-border-lines-light/70 hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-1`}
+                            className={`w-full text-sm px-4 py-2 rounded-md text-text-color-black font-semibold tracking-tight bg-border-lines-light/70 hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-1`}
                         >
                             <TiArrowUpThick className="text-base" />
                             Withdraw
                         </button>
                     </div>
                 </div>
-                <div className="w-2/3 bg-white shadow-lg shadow-stone-600/10 rounded-2xl"></div>
+                <div className="w-2/3 bg-white shadow-lg shadow-stone-600/10 rounded-2xl grid gap-0 grid-cols-2 ">
+                    {/* Profit */}
+                    <div className="flex flex-col p-8 w-full h-fit border-r-[1px] border-b-[1px] ">
+                        <div className="flex items-center justify-between w-full">
+                            <h1 className="text-sm text-text-color-black/60 font-medium">
+                                Profit
+                            </h1>
+                        </div>
+                        <div className="w-full pt-3">
+                            {/* Profit */}
+                            <CountUp
+                                start={0}
+                                end={49.5}
+                                duration={.9}
+                                separator=","
+                                decimals={2}
+                                decimal="."
+                                prefix="$ "
+                            //   suffix=" left"
+                            >
+                                {({ countUpRef, start }) => (
+                                    <div className="">
+                                        <span className="py-2 text-2xl font-extrabold" ref={countUpRef} />
+                                    </div>
+                                )}
+                            </CountUp>
+                            <p className="text-xs pt-1 text-text-color-black/60 font-medium "><span className="text-red-500">0.9%</span> descrease for the last 7 days</p>
+                        </div>
+                    </div>
+                    {/* Margin */}
+                    <div className="flex flex-col p-8 w-full h-fit border-b-[1px]">
+                        <div className="flex items-center justify-between w-full">
+                            <h1 className="text-sm text-text-color-black/60 font-medium">
+                                Margin
+                            </h1>
+                        </div>
+                        <div className="w-full pt-3">
+                            {/* Margin */}
+                            <CountUp
+                                start={0}
+                                end={92405}
+                                duration={.9}
+                                separator=","
+                                decimals={2}
+                                decimal="."
+                                prefix="$ "
+                            //   suffix=" left"
+                            >
+                                {({ countUpRef, start }) => (
+                                    <div className="">
+                                        <span className="py-2 text-2xl font-extrabold" ref={countUpRef} />
+                                    </div>
+                                )}
+                            </CountUp>
+                            <p className="text-xs pt-1 text-text-color-black/60 font-medium "><span className="text-green-600">32%</span> increase for the last 7 days</p>
+                        </div>
+                    </div>
+                    {/* Free Margin */}
+                    <div className="flex flex-col p-8 w-full h-fit border-r-[1px] ">
+                        <div className="flex items-center justify-between w-full">
+                            <h1 className="text-sm text-text-color-black/60 font-medium">
+                                Free Margin
+                            </h1>
+                        </div>
+                        <div className="w-full pt-3">
+                            {/* Free Margin */}
+                            <CountUp
+                                start={0}
+                                end={32218.2}
+                                duration={.9}
+                                separator=","
+                                decimals={2}
+                                decimal="."
+                                prefix="$ "
+                            //   suffix=" left"
+                            >
+                                {({ countUpRef, start }) => (
+                                    <div className="">
+                                        <span className="py-2 text-2xl font-extrabold" ref={countUpRef} />
+                                    </div>
+                                )}
+                            </CountUp>
+                            <p className="text-xs pt-1 text-text-color-black/60 font-medium "><span className="text-green-600">2%</span> increase for the last 7 days</p>
+                        </div>
+                    </div>
+                    {/*  */}
+                    <div className="flex flex-col p-8 w-full h-fit">
+                        <div className="flex items-center justify-between w-full">
+                            <h1 className="text-sm text-text-color-black/60 font-medium">
+                                Total Balance
+                            </h1>
+                        </div>
+                        <div className="w-full pt-3">
+                            {/* Balance */}
+                            <CountUp
+                                start={0}
+                                end={320.2}
+                                duration={.9}
+                                separator=","
+                                decimals={2}
+                                decimal="."
+                                prefix="$ "
+                            //   suffix=" left"
+                            >
+                                {({ countUpRef, start }) => (
+                                    <div className="">
+                                        <span className="py-2 text-2xl font-extrabold" ref={countUpRef} />
+                                    </div>
+                                )}
+                            </CountUp>
+                            <p className="text-xs pt-1 text-text-color-black/60 font-medium "><span className="text-green-600">129%</span> increase for the last 7 days</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
