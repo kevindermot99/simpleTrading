@@ -18,7 +18,8 @@ export default {
       colors: {
         "text-color-white": "#f4f4f5",
         "text-color-black": "#27272a",
-        "body": "#f4f4f9",
+        "body-white": "#fafafa",
+        "body-black": "#18181b",
         "border-lines-light": "#e5e7eb",
       },
     },
