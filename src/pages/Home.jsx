@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { Select, ConfigProvider } from "antd";
+import CountUp from 'react-countup';
 
 function Home() {
     return (
@@ -56,12 +57,28 @@ function Home() {
                                     { value: 'Ripple', label: 'Ripple' },
                                     { value: 'Litecoin', label: 'Litecoin' },
                                 ]}
-                                placeholder="select it"
+                                placeholder="Currency"
                             />
                         </ConfigProvider>
                     </div>
                     <div className="w-full">
-                        <h1 className="py-2 text-3xl font-bold"><span className="pr-1">$</span>32,120.99</h1>
+                        {/* Balance */}
+                        <CountUp
+                            start={0}
+                            end={32120.2}
+                            duration={.9}
+                            separator=","
+                            decimals={2}
+                            decimal="."
+                            prefix="$"
+                        //   suffix=" left"
+                        >
+                            {({ countUpRef, start }) => (
+                                <div className="py-2">
+                                    <span className="py-2 text-3xl font-extrabold" ref={countUpRef} />
+                                </div>
+                            )}
+                        </CountUp>
                     </div>
                 </div>
                 <div className="w-2/3 bg-white shadow-lg shadow-stone-600/10 rounded-2xl"></div>
