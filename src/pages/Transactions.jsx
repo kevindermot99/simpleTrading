@@ -59,6 +59,96 @@ function Transactions() {
             pl: { status: "profit", amount: "$690" },
             Symbol: "usdjpy",
         },
+        {
+            name: "Alice Johnson",
+            OrderId: "0R932HB984",
+            DoneAt: "June 12, 2023, 11:21 PM",
+            Type: "Buy",
+            Size: "0.03",
+            pl: { status: "loss", amount: "$12" },
+            Symbol: "audusd",
+        },
+        {
+            name: "Bob Smith",
+            OrderId: "1T847CZX912",
+            DoneAt: "June 13, 2023, 09:45 AM",
+            Type: "Sell",
+            Size: "0.10",
+            pl: { status: "profit", amount: "$30" },
+            Symbol: "eurusd",
+        },
+        {
+            name: "Carol Davis",
+            OrderId: "2F658DVQ731",
+            DoneAt: "June 14, 2023, 03:30 PM",
+            Type: "Buy",
+            Size: "0.05",
+            pl: { status: "profit", amount: "$322" },
+            Symbol: "gbpusd",
+        },
+        {
+            name: "David Wilson",
+            OrderId: "3J249LKP654",
+            DoneAt: "June 15, 2023, 07:15 PM",
+            Type: "Sell",
+            Size: "0.02",
+            pl: { status: "loss", amount: "$1090" },
+            Symbol: "usdchf",
+        },
+        {
+            name: "Eve Clark",
+            OrderId: "4M860RZP375",
+            DoneAt: "June 16, 2023, 12:00 PM",
+            Type: "Buy",
+            Size: "0.07",
+            pl: { status: "profit", amount: "$690" },
+            Symbol: "usdjpy",
+        },
+        {
+            name: "Alice Johnson",
+            OrderId: "0R932HB984",
+            DoneAt: "June 12, 2023, 11:21 PM",
+            Type: "Buy",
+            Size: "0.03",
+            pl: { status: "loss", amount: "$12" },
+            Symbol: "audusd",
+        },
+        {
+            name: "Bob Smith",
+            OrderId: "1T847CZX912",
+            DoneAt: "June 13, 2023, 09:45 AM",
+            Type: "Sell",
+            Size: "0.10",
+            pl: { status: "profit", amount: "$30" },
+            Symbol: "eurusd",
+        },
+        {
+            name: "Carol Davis",
+            OrderId: "2F658DVQ731",
+            DoneAt: "June 14, 2023, 03:30 PM",
+            Type: "Buy",
+            Size: "0.05",
+            pl: { status: "profit", amount: "$322" },
+            Symbol: "gbpusd",
+        },
+        {
+            name: "David Wilson",
+            OrderId: "3J249LKP654",
+            DoneAt: "June 15, 2023, 07:15 PM",
+            Type: "Sell",
+            Size: "0.02",
+            pl: { status: "loss", amount: "$1090" },
+            Symbol: "usdchf",
+        },
+        {
+            name: "Eve Clark",
+            OrderId: "4M860RZP375",
+            DoneAt: "June 16, 2023, 12:00 PM",
+            Type: "Buy",
+            Size: "0.07",
+            pl: { status: "profit", amount: "$690" },
+            Symbol: "usdjpy",
+        },
     ];
     return (
         <div className="bg-body-white w-full h-full min-h-svh relative">
@@ -66,13 +156,14 @@ function Transactions() {
             {/* Hero */}
             <div className="main-header min-h-[170px] px-10 pt-5 text-text-color-white tracking-tight">
                 {/* Greetings */}
-                <h1 className=" font-medium text-xl">Welcome back, Petter!</h1>
+                <h1 className=" font-medium text-xl">Transactions History</h1>
                 <div className="flex items-center gap-1 my-3">
-                    <button
+                    <Link 
+                        to="/"
                         className={`text-sm px-4 py-2 font-medium hover:bg-stone-300/10 border-b-2 border-text-color-white`}
                     >
                         Overview
-                    </button>
+                    </Link>
                     <button
                         className={`text-sm px-4 py-2 font-medium hover:bg-stone-300/10 border-b-2 border-transparent opacity-50 hover:opacity-100`}
                     >
@@ -86,265 +177,7 @@ function Transactions() {
                 </div>
             </div>
             <div className="flex gap-5 w-full h-full bg-transparent mt-[-50px] px-10 text-text-color-black pb-10">
-                <div className="w-1/3 min-h-full flex flex-col gap-5 ">
-                    {/* Balance */}
-                    <div className=" w-full h-fit bg-white shadow-lg shadow-stone-600/10 flex flex-col p-6">
-                        <div className="flex items-center justify-between w-full">
-                            <h1 className="text-sm text-text-color-black/60 font-medium">
-                                Total Balance
-                            </h1>
-                            <ConfigProvider
-                                theme={{
-                                    token: {
-                                        // Seed Token
-                                        colorPrimary: "#fff",
-                                        borderRadius: 0,
-                                        colorBorder: "#00000000",
-                                        colorBgContainer: "#e5e7eb70",
-                                        colorBgTextHover: "red",
-                                        zIndexPopupBase: "1",
-                                        zIndexBase: "1"
-                                    },
-                                }}
-                            >
-                                <Select
-                                    defaultValue="USD"
-                                    style={{
-                                        width: "120px",
-                                        boxShadow: "none",
-                                    }}
-                                    allowClear
-                                    options={[
-                                        { value: "USD", label: "USD" },
-                                        { value: "Bitcoin", label: "Bitcoin" },
-                                        { value: "Ethereum", label: "Ethereum" },
-                                        { value: "USDT", label: "USDT" },
-                                        { value: "USDC", label: "USDC" },
-                                        { value: "DAI", label: "DAI" },
-                                        { value: "BUSD", label: "BUSD" },
-                                        { value: "Ripple", label: "Ripple" },
-                                        { value: "Litecoin", label: "Litecoin" },
-                                    ]}
-                                    placeholder="Currency"
-                                />
-                            </ConfigProvider>
-                        </div>
-                        <div className="w-full py-3">
-                            {/* Balance */}
-                            <CountUp
-                                start={0}
-                                end={320.2}
-                                duration={0.9}
-                                separator=","
-                                decimals={2}
-                                decimal="."
-                                prefix="$ "
-                            //   suffix=" left"
-                            >
-                                {({ countUpRef, start }) => (
-                                    <div className="">
-                                        <span
-                                            className="py-2 text-3xl font-extrabold"
-                                            ref={countUpRef}
-                                        />
-                                    </div>
-                                )}
-                            </CountUp>
-                            <p className="text-xs pt-1 text-text-color-black/60 font-medium ">
-                                <span className="text-green-600">129%</span> increase for the
-                                last 7 days
-                            </p>
-                        </div>
-                        <div className="flex items-center gap-2 mt-5">
-                            {/* Deposit */}
-                            <button
-                                className={`w-full text-sm px-4 py-2 text-text-color-white font-semibold tracking-tight bg-button-color hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-1`}
-                            >
-                                <TiArrowDownThick className="text-base" />
-                                Deposit
-                            </button>
-                            {/* withdraw */}
-                            <button
-                                className={`w-full text-sm px-4 py-2 text-text-color-black font-semibold tracking-tight bg-border-lines-light/70 hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-1`}
-                            >
-                                <TiArrowUpThick className="text-base" />
-                                Withdraw
-                            </button>
-                        </div>
-                    </div>
-                    {/* Ads */}
-                    <div className=" w-full h-full flex-1 bg-white shadow-lg shadow-stone-600/10 flex flex-col gap-4 p-6">
-                        <div className="flex items-center justify-between w-full">
-                            <h1 className="text-sm text-text-color-black/60 font-medium">
-                                Sponsored
-                            </h1>
-                        </div>
-                        <div className="w-full bg-border-lines-light h-[120px]"></div>
-                        <div className="w-full bg-border-lines-light h-[10px]"></div>
-                        <div className="w-1/2 bg-border-lines-light h-[10px]"></div>
-                        <div className="w-full bg-border-lines-light h-[120px]"></div>
-                        <div className="w-full bg-border-lines-light h-[10px]"></div>
-                        <div className="w-1/2 bg-border-lines-light h-[10px]"></div>
-                    </div>
-                </div>
-                <div className="w-2/3 min-h-full flex flex-col gap-5">
-                    <div className="w-full h-fit bg-white shadow-lg shadow-stone-600/10 grid gap-0 grid-cols-2 ">
-                        {/* Profit */}
-                        <div className="flex flex-col p-6 w-full h-fit border-r-[1px] border-b-[1px] ">
-                            <div className="flex items-center justify-between w-full">
-                                <h1 className="text-sm text-text-color-black/60 font-medium">
-                                    Profit
-                                </h1>
-                                <div className=" bg-stone-600/5 p-2 ">
-                                    <TbCoins className="text-stone-500 text-2xl" />
-                                </div>
-                            </div>
-                            <div className="w-full pt-0">
-                                {/* Profit */}
-                                <CountUp
-                                    start={0}
-                                    end={49.5}
-                                    duration={0.9}
-                                    separator=","
-                                    decimals={2}
-                                    decimal="."
-                                    prefix="$ "
-                                //   suffix=" left"
-                                >
-                                    {({ countUpRef, start }) => (
-                                        <div className="">
-                                            <span
-                                                className=" text-2xl font-extrabold"
-                                                ref={countUpRef}
-                                            />
-                                        </div>
-                                    )}
-                                </CountUp>
-                                <p className="text-xs pt-2 text-text-color-black/60 font-medium ">
-                                    <span className="text-red-500">0.9%</span> descrease for the
-                                    last 7 days
-                                </p>
-                            </div>
-                        </div>
-                        {/* Margin */}
-                        <div className="flex flex-col p-6 w-full h-fit border-b-[1px]">
-                            <div className="flex items-center justify-between w-full">
-                                <h1 className="text-sm text-text-color-black/60 font-medium">
-                                    Margin
-                                </h1>
-                                <div className=" bg-stone-600/5 p-2 ">
-                                    <TbLayoutAlignCenter className="text-stone-500 text-2xl" />
-                                </div>
-                            </div>
-                            <div className="w-full pt-0">
-                                {/* Margin */}
-                                <CountUp
-                                    start={0}
-                                    end={92405}
-                                    duration={0.9}
-                                    separator=","
-                                    decimals={2}
-                                    decimal="."
-                                    prefix="$ "
-                                //   suffix=" left"
-                                >
-                                    {({ countUpRef, start }) => (
-                                        <div className="">
-                                            <span
-                                                className=" text-2xl font-extrabold"
-                                                ref={countUpRef}
-                                            />
-                                        </div>
-                                    )}
-                                </CountUp>
-                                <p className="text-xs pt-2 text-text-color-black/60 font-medium ">
-                                    <span className="text-green-600">32%</span> increase for the
-                                    last 7 days
-                                </p>
-                            </div>
-                        </div>
-                        {/* Free Margin */}
-                        <div className="flex flex-col p-6 w-full h-fit border-r-[1px] ">
-                            <div className="flex items-center justify-between w-full">
-                                <h1 className="text-sm text-text-color-black/60 font-medium">
-                                    Free Margin
-                                </h1>
-                                <div className=" bg-stone-600/5 p-2 ">
-                                    <TbLayoutAlignCenter className="text-stone-500 text-2xl" />
-                                </div>
-                            </div>
-                            <div className="w-full pt-0">
-                                {/* Free Margin */}
-                                <CountUp
-                                    start={0}
-                                    end={32218.2}
-                                    duration={0.9}
-                                    separator=","
-                                    decimals={2}
-                                    decimal="."
-                                    prefix="$ "
-                                //   suffix=" left"
-                                >
-                                    {({ countUpRef, start }) => (
-                                        <div className="">
-                                            <span
-                                                className=" text-2xl font-extrabold"
-                                                ref={countUpRef}
-                                            />
-                                        </div>
-                                    )}
-                                </CountUp>
-                                <p className="text-xs pt-2 text-text-color-black/60 font-medium ">
-                                    <span className="text-green-600">2%</span> increase for the
-                                    last 7 days
-                                </p>
-                            </div>
-                        </div>
-                        {/* Margin Level */}
-                        <div className="flex flex-col p-6 w-full h-fit">
-                            <div className="flex items-center justify-between w-full">
-                                <h1 className="text-sm text-text-color-black/60 font-medium">
-                                    Margin Level %
-                                </h1>
-                                <div className=" bg-stone-600/5 p-2 ">
-                                    <TbKeyframes className="text-stone-500 text-2xl" />
-                                </div>
-                            </div>
-                            <div className="w-full pt-0">
-                                {/* Balance */}
-                                <CountUp
-                                    start={0}
-                                    end={405}
-                                    duration={0.9}
-                                    separator=","
-                                    // decimals={2}
-                                    decimal="."
-                                    // prefix="$ "
-                                    suffix=" %"
-                                >
-                                    {({ countUpRef, start }) => (
-                                        <div className="">
-                                            <span
-                                                className=" text-2xl font-extrabold"
-                                                ref={countUpRef}
-                                            />
-                                        </div>
-                                    )}
-                                </CountUp>
-                                <p className="text-xs pt-2 text-text-color-black/60 font-medium ">
-                                    <span className="text-green-600">73%</span> increase for the
-                                    last 7 days
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <Link
-                        kto="/"
-                        className="text-sm text-text-color-black/50 font-medium w-fit h-fit flex items-center gap-1"
-                    >
-                        View Detailed Report
-                        <LuExternalLink />
-                    </Link>
+                <div className="w-full min-h-full flex flex-col gap-5">
                     <div className=" w-full flex-1 h-full bg-white shadow-lg shadow-stone-600/10 flex flex-col gap-2 p-6">
                         <div className="flex items-center justify-between w-full pb-2">
                             <h1 className="text-xs text-text-color-black/60 font-medium">
