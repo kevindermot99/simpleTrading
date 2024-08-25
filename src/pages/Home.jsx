@@ -32,7 +32,7 @@ function Home() {
                     </button>
                 </div>
             </div>
-            <div className="flex gap-5 w-full bg-transparent min-h-[200px] mt-[-50px] px-10 text-text-color-black pb-10">
+            <div className="flex gap-5 w-full h-full bg-transparent mt-[-50px] px-10 text-text-color-black pb-10">
                 <div className="w-1/3 h-fit flex flex-col gap-5">
                     {/* Balance */}
                     <div className=" w-full h-fit bg-white shadow-lg shadow-stone-600/10 flex flex-col p-6">
@@ -45,7 +45,7 @@ function Home() {
                                     token: {
                                         // Seed Token
                                         colorPrimary: '#fff',
-                                        borderRadius: 7,
+                                        borderRadius: 0,
                                         colorBorder: '#00000000',
                                         colorBgContainer: '#e5e7eb70',
                                         colorBgTextHover: "red"
@@ -123,7 +123,7 @@ function Home() {
                         <div className="w-1/2 bg-border-lines-light h-[10px]"></div>
                     </div>
                 </div>
-                <div className="w-2/3 h-fit flex flex-col gap-5">
+                <div className="w-2/3 min-h-full flex flex-col gap-5">
                     <div className="w-full h-fit bg-white shadow-lg shadow-stone-600/10 grid gap-0 grid-cols-2 ">
                         {/* Profit */}
                         <div className="flex flex-col p-6 w-full h-fit border-r-[1px] border-b-[1px] ">
@@ -250,11 +250,62 @@ function Home() {
                             </div>
                         </div>
                     </div>
-                    <Link kto="/" className="text-sm text-text-color-black/50 font-medium w-full flex items-center gap-1">
+                    <Link kto="/" className="text-sm text-text-color-black/50 font-medium w-fit h-fit flex items-center gap-1">
                         View Detailed Report
                         <LuExternalLink />
                     </Link>
-                    <div className=" w-full h-fit bg-white shadow-lg shadow-stone-600/10 flex flex-col gap-4 p-6">
+                    <div className=" w-full flex-1 h-full bg-white shadow-lg shadow-stone-600/10 flex flex-col gap-4 p-6">
+                        <div className="flex items-center justify-between w-full">
+                            <h1 className="text-sm text-text-color-black/60 font-medium">
+                                Transactions History
+                            </h1>
+                        </div>
+                        <table class="w-full text-sm text-left">
+                            <thead class="text-xs text-gray-700 uppercase border-b">
+                                <tr>
+                                    <th scope="col" class=" py-3">
+                                        Trader name
+                                    </th>
+                                    <th scope="col" class=" py-3">
+                                        Order id
+                                    </th>
+                                    <th scope="col" class=" py-3">
+                                        Done at
+                                    </th>
+                                    <th scope="col" class=" py-3">
+                                        type
+                                    </th>
+                                    <th scope="col" class=" py-3">
+                                        size
+                                    </th>
+                                    <th scope="col" class=" py-3">
+                                        symbol
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="odd:bg-white even:bg-border-lines-light/40 border-b text-sm text-text-color-black/70 ">
+                                    <th class=" py-2 font-medium text-text-color-black whitespace-nowrap ">
+                                        Gift Taps
+                                    </th>
+                                    <td class=" py-2">
+                                        02NF937GT309
+                                    </td>
+                                    <td class=" py-2">
+                                        12 jun, 2023 23:21 am
+                                    </td>
+                                    <td class=" py-2">
+                                        Buy
+                                    </td>
+                                    <td class=" py-2">
+                                        0.02
+                                    </td>
+                                    <td class=" py-2">
+                                        audusd
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
