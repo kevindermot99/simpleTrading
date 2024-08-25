@@ -2,10 +2,10 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import { Select, ConfigProvider } from "antd";
 import CountUp from 'react-countup';
-import { LuArrowDownFromLine } from "react-icons/lu";
+import { LuArrowDownFromLine, LuExternalLink } from "react-icons/lu";
 import { TiArrowDownThick, TiArrowUpThick } from "react-icons/ti";
 import { TbCoins, TbKeyframes, TbLayoutAlignCenter, TbMoneybag, TbSpacingHorizontal } from "react-icons/tb";
-
+import { Link } from "react-router-dom";
 function Home() {
     return (
         <div className="bg-body-white w-full h-full min-h-svh relative">
@@ -35,7 +35,7 @@ function Home() {
             <div className="flex gap-5 w-full bg-transparent min-h-[200px] mt-[-50px] px-10 text-text-color-black pb-10">
                 <div className="w-1/3 h-fit flex flex-col gap-5">
                     {/* Balance */}
-                    <div className=" w-full h-fit bg-white shadow-lg shadow-stone-600/10 rounded-2xl flex flex-col p-6">
+                    <div className=" w-full h-fit bg-white shadow-lg shadow-stone-600/10 flex flex-col p-6">
                         <div className="flex items-center justify-between w-full">
                             <h1 className="text-sm text-text-color-black/60 font-medium">
                                 Total Balance
@@ -94,14 +94,14 @@ function Home() {
                         <div className="flex items-center gap-2 mt-5">
                             {/* Deposit */}
                             <button
-                                className={`w-full text-sm px-4 py-2 rounded-md text-text-color-white font-semibold tracking-tight bg-button-color hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-1`}
+                                className={`w-full text-sm px-4 py-2 text-text-color-white font-semibold tracking-tight bg-button-color hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-1`}
                             >
                                 <TiArrowDownThick className="text-base" />
                                 Deposit
                             </button>
                             {/* withdraw */}
                             <button
-                                className={`w-full text-sm px-4 py-2 rounded-md text-text-color-black font-semibold tracking-tight bg-border-lines-light/70 hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-1`}
+                                className={`w-full text-sm px-4 py-2 text-text-color-black font-semibold tracking-tight bg-border-lines-light/70 hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-1`}
                             >
                                 <TiArrowUpThick className="text-base" />
                                 Withdraw
@@ -109,29 +109,29 @@ function Home() {
                         </div>
                     </div>
                     {/* Ads */}
-                    <div className=" w-full h-fit bg-white shadow-lg shadow-stone-600/10 rounded-2xl flex flex-col gap-4 p-6">
+                    <div className=" w-full h-fit bg-white shadow-lg shadow-stone-600/10 flex flex-col gap-4 p-6">
                         <div className="flex items-center justify-between w-full">
                             <h1 className="text-sm text-text-color-black/60 font-medium">
                                 Sponsored
                             </h1>
                         </div>
-                        <div className="w-full rounded-xl bg-border-lines-light h-[120px]"></div>
-                        <div className="w-full rounded-xl bg-border-lines-light h-[10px]"></div>
-                        <div className="w-1/2 rounded-xl bg-border-lines-light h-[10px]"></div>
-                        <div className="w-full rounded-xl bg-border-lines-light h-[120px]"></div>
-                        <div className="w-full rounded-xl bg-border-lines-light h-[10px]"></div>
-                        <div className="w-1/2 rounded-xl bg-border-lines-light h-[10px]"></div>
+                        <div className="w-full bg-border-lines-light h-[120px]"></div>
+                        <div className="w-full bg-border-lines-light h-[10px]"></div>
+                        <div className="w-1/2 bg-border-lines-light h-[10px]"></div>
+                        <div className="w-full bg-border-lines-light h-[120px]"></div>
+                        <div className="w-full bg-border-lines-light h-[10px]"></div>
+                        <div className="w-1/2 bg-border-lines-light h-[10px]"></div>
                     </div>
                 </div>
                 <div className="w-2/3 h-fit flex flex-col gap-5">
-                    <div className="w-full h-fit bg-white shadow-lg shadow-stone-600/10 rounded-2xl grid gap-0 grid-cols-2 ">
+                    <div className="w-full h-fit bg-white shadow-lg shadow-stone-600/10 grid gap-0 grid-cols-2 ">
                         {/* Profit */}
                         <div className="flex flex-col p-6 w-full h-fit border-r-[1px] border-b-[1px] ">
                             <div className="flex items-center justify-between w-full">
                                 <h1 className="text-sm text-text-color-black/60 font-medium">
                                     Profit
                                 </h1>
-                                <div className="rounded-lg bg-stone-600/5 p-2 ">
+                                <div className=" bg-stone-600/5 p-2 ">
                                     <TbCoins className="text-stone-500 text-2xl" />
                                 </div>
                             </div>
@@ -162,7 +162,7 @@ function Home() {
                                 <h1 className="text-sm text-text-color-black/60 font-medium">
                                     Margin
                                 </h1>
-                                <div className="rounded-lg bg-stone-600/5 p-2 ">
+                                <div className=" bg-stone-600/5 p-2 ">
                                     <TbLayoutAlignCenter className="text-stone-500 text-2xl" />
                                 </div>
                             </div>
@@ -193,7 +193,7 @@ function Home() {
                                 <h1 className="text-sm text-text-color-black/60 font-medium">
                                     Free Margin
                                 </h1>
-                                <div className="rounded-lg bg-stone-600/5 p-2 ">
+                                <div className=" bg-stone-600/5 p-2 ">
                                     <TbLayoutAlignCenter className="text-stone-500 text-2xl" />
                                 </div>
                             </div>
@@ -224,7 +224,7 @@ function Home() {
                                 <h1 className="text-sm text-text-color-black/60 font-medium">
                                     Margin Level %
                                 </h1>
-                                <div className="rounded-lg bg-stone-600/5 p-2 ">
+                                <div className=" bg-stone-600/5 p-2 ">
                                     <TbKeyframes className="text-stone-500 text-2xl" />
                                 </div>
                             </div>
@@ -250,12 +250,15 @@ function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className=" w-full h-fit bg-white shadow-lg shadow-stone-600/10 rounded-2xl flex flex-col gap-4 p-6">
+                    <Link kto="/" className="text-sm text-text-color-black/50 font-medium w-full flex items-center gap-1">
+                        View Detailed Report
+                        <LuExternalLink />
+                    </Link>
+                    <div className=" w-full h-fit bg-white shadow-lg shadow-stone-600/10 flex flex-col gap-4 p-6">
                     </div>
                 </div>
             </div>
         </div>
     );
 }
-
 export default Home;
