@@ -9,8 +9,11 @@ function Navbar() {
         <h1 className='font-bold text-3xl font-DMSerifText mr-4'>st.</h1>
         <div className='flex items-center'>
             <Link to="/" className='text-sm px-3 py-2 hover:bg-border-lines-light'>Dashboard</Link>
-            <Link to="/" className='text-sm px-3 py-2 hover:bg-border-lines-light'>Dashboard</Link>
-            <Link to="/" className='text-sm px-3 py-2 hover:bg-border-lines-light'>Dashboard</Link>
+            <Link to="/" className='text-sm px-3 py-2 hover:bg-border-lines-light'>Leaders</Link>
+            <Link to="/" className='text-sm px-3 py-2 hover:bg-border-lines-light'>Find Agents</Link>
+            <Link to="/" className='text-sm px-3 py-2 hover:bg-border-lines-light'>Signals</Link>
+            <Link to="/" className='text-sm px-3 py-2 hover:bg-border-lines-light'>Learn</Link>
+            <Link to="/" className='text-sm px-3 py-2 hover:bg-border-lines-light'>Help Center</Link>
         </div>
       </div>
       {/* Search, Notifications and Profile image */}
