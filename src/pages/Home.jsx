@@ -9,7 +9,7 @@ function Home() {
             <div className='main-header min-h-[200px] px-10 pt-5 text-text-color-white tracking-tight'>
                 {/* Greetings */}
                 <h1 className=' font-medium text-xl'>Welcome back, Petter!</h1>
-                <div className='flex items-center gap-1 mt-3'>
+                <div className='flex items-center gap-1 my-3'>
                     <button className={`text-sm px-4 py-2 hover:bg-stone-300/10 border-b-2 border-text-color-white`}>Overview</button>
                     <button className={`text-sm px-4 py-2 hover:bg-stone-300/10 border-b-2 border-transparent opacity-50 hover:opacity-100`}>Leaders</button>
 
