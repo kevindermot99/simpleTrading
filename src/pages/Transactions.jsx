@@ -12,6 +12,10 @@ import {
     TbSpacingHorizontal,
 } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import { Input } from 'antd';
+import { DatePicker, Space } from 'antd';
+const { RangePicker } = DatePicker;
+
 function Transactions() {
     const testTransactions = [
         {
@@ -158,14 +162,14 @@ function Transactions() {
                 {/* Greetings */}
                 <h1 className=" font-medium text-xl">Transactions History</h1>
                 <div className="flex items-center gap-1 my-3">
-                    <Link 
+                    <Link
                         to="/"
-                        className={`text-sm px-4 py-2 font-medium hover:bg-stone-300/10 border-b-2 border-transparent`}
+                        className={`text-sm px-4 py-2 font-medium hover:bg-stone-300/10 border-b-2 border-transparent opacity-50 hover:opacity-100`}
                     >
                         Overview
                     </Link>
                     <button
-                        className={`text-sm px-4 py-2 font-medium hover:bg-stone-300/10 border-b-2 border-transparent opacity-50 hover:opacity-100`}
+                        className={`text-sm px-4 py-2 font-medium hover:bg-stone-300/10 border-b-2 border-text-color-white`}
                     >
                         Transactions
                     </button>
@@ -178,17 +182,31 @@ function Transactions() {
             </div>
             <div className="flex gap-5 w-full h-full bg-transparent mt-[-50px] px-10 text-text-color-black pb-10">
                 <div className="w-full min-h-full flex flex-col gap-5">
-                    <div className=" w-full flex-1 h-full bg-white shadow-lg shadow-stone-600/10 flex flex-col gap-2 p-6">
-                        <div className="flex items-center justify-between w-full pb-2">
-                            <h1 className="text-xs text-text-color-black/60 font-medium">
+                    <div className=" w-full flex-1 h-full min-h-[500px] bg-white shadow-lg shadow-stone-600/10 flex flex-col gap-2 p-6">
+                        <div className="flex items-center justify-between w-full pb-3">
+                            <h1 className="text-sm text-text-color-black/60 font-medium">
                                 Recent Transactions History
                             </h1>
-                            <Link
-                                kto="/"
-                                className="text-xs text-text-color-black/50 font-medium w-fit h-fit flex items-center gap-1"
-                            >
-                                View all
-                            </Link>
+                            <form className="flex items-center gap-2">
+                                <ConfigProvider
+                                    theme={{
+                                        token: {
+                                            // Seed Token
+                                            colorPrimary: "#21232a",
+                                            colorPrimaryBg: "#e8e8e8",
+                                            borderRadius: 2,
+                                            colorBorder: "#00000000",
+                                            colorBgContainer: "#e5e7eb70",
+                                            zIndexPopupBase: "1",
+                                            zIndexBase: "1"
+                                        },
+                                    }}
+                                >
+                                    <RangePicker style={{width: "250px"}} />
+                                    <Input placeholder="keyword" style={{width: "130px"}} />
+                                </ConfigProvider>
+                                <button type="submit" className="bg-button-color py-2 text-xs text-white font-medium px-6">Filter</button>
+                            </form>
                         </div>
                         <table class="w-full text-sm text-left table-auto">
                             <thead class="text-xs text-gray-700 uppercase border-b">
