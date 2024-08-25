@@ -10,8 +10,8 @@ function Home() {
                 {/* Greetings */}
                 <h1 className=' font-medium text-xl'>Welcome back, Petter!</h1>
                 <div className='flex items-center gap-1 mt-3'>
-                    <button className={`text-sm px-4 py-2 hover:bg-stone-300/10`}>Dashboard</button>
-                    <button className={`text-sm px-4 py-2 hover:bg-stone-300/10`}>Leaders</button>
+                    <button className={`text-sm px-4 py-2 hover:bg-stone-300/10 border-b-2 border-text-color-white`}>Overview</button>
+                    <button className={`text-sm px-4 py-2 hover:bg-stone-300/10 border-b-2 border-transparent opacity-50 hover:opacity-100`}>Leaders</button>
 
                 </div>
             </div>
