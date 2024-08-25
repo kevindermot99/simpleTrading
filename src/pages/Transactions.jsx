@@ -160,7 +160,7 @@ function Transactions() {
                 <div className="flex items-center gap-1 my-3">
                     <Link 
                         to="/"
-                        className={`text-sm px-4 py-2 font-medium hover:bg-stone-300/10 border-b-2 border-text-color-white`}
+                        className={`text-sm px-4 py-2 font-medium hover:bg-stone-300/10 border-b-2 border-transparent`}
                     >
                         Overview
                     </Link>
