@@ -12,7 +12,7 @@ function Navbar() {
   }, []);
 
   return (
-    <div className={`h-[65px] px-10 w-full flex items-center justify-between tracking-tight sticky top-0 z-20 transition-all ${scrolled ? 'text-text-color-black bg-white shadow-lg shadow-stone-500/5' : 'text-text-color-white main-header'} `}>
+    <div className={`h-[65px] px-10 w-full flex items-center justify-between tracking-tight sticky top-0 z-[999] transition-all ${scrolled ? 'text-text-color-black bg-white shadow-lg shadow-stone-500/5' : 'text-text-color-white main-header'} `}>
       {/* Logo & Links */}
       <div className='flex items-center h-fit w-fit gap-1'>
         <h1 className='font-bold text-3xl font-DMSerifText mr-4'>st.</h1>
