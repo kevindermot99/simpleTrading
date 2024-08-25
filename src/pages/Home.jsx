@@ -23,7 +23,7 @@ function Home() {
                     </button>
                 </div>
             </div>
-            <div className="flex gap-2 w-full bg-transparent h-[200px] mt-[-50px] px-10">
+            <div className="flex gap-2 w-full bg-transparent h-[200px] mt-[-50px] px-10 text-text-color-black">
                 <div className="w-1/3 bg-white shadow-lg shadow-stone-600/10 rounded-2xl flex flex-col p-8">
                     <div className="flex items-center justify-between w-full">
                         <h1 className="text-sm text-text-color-black/60 font-medium">
@@ -61,7 +61,7 @@ function Home() {
                         </ConfigProvider>
                     </div>
                     <div className="w-full">
-                        <h1>$32,120.99</h1>
+                        <h1 className="py-2 text-3xl font-bold"><span className="pr-1">$</span>32,120.99</h1>
                     </div>
                 </div>
                 <div className="w-2/3 bg-white shadow-lg shadow-stone-600/10 rounded-2xl"></div>
