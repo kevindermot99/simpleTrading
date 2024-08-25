@@ -123,130 +123,134 @@ function Home() {
                         <div className="w-1/2 rounded-xl bg-border-lines-light h-[10px]"></div>
                     </div>
                 </div>
-                <div className="w-2/3 h-fit bg-white shadow-lg shadow-stone-600/10 rounded-2xl grid gap-0 grid-cols-2 ">
-                    {/* Profit */}
-                    <div className="flex flex-col p-6 w-full h-fit border-r-[1px] border-b-[1px] ">
-                        <div className="flex items-center justify-between w-full">
-                            <h1 className="text-sm text-text-color-black/60 font-medium">
-                                Profit
-                            </h1>
-                            <div className="rounded-lg bg-stone-600/5 p-2 ">
-                                <TbCoins className="text-stone-500 text-2xl" />
+                <div className="w-2/3 h-fit flex flex-col gap-5">
+                    <div className="w-full h-fit bg-white shadow-lg shadow-stone-600/10 rounded-2xl grid gap-0 grid-cols-2 ">
+                        {/* Profit */}
+                        <div className="flex flex-col p-6 w-full h-fit border-r-[1px] border-b-[1px] ">
+                            <div className="flex items-center justify-between w-full">
+                                <h1 className="text-sm text-text-color-black/60 font-medium">
+                                    Profit
+                                </h1>
+                                <div className="rounded-lg bg-stone-600/5 p-2 ">
+                                    <TbCoins className="text-stone-500 text-2xl" />
+                                </div>
+                            </div>
+                            <div className="w-full pt-0">
+                                {/* Profit */}
+                                <CountUp
+                                    start={0}
+                                    end={49.5}
+                                    duration={.9}
+                                    separator=","
+                                    decimals={2}
+                                    decimal="."
+                                    prefix="$ "
+                                //   suffix=" left"
+                                >
+                                    {({ countUpRef, start }) => (
+                                        <div className="">
+                                            <span className=" text-2xl font-extrabold" ref={countUpRef} />
+                                        </div>
+                                    )}
+                                </CountUp>
+                                <p className="text-xs pt-2 text-text-color-black/60 font-medium "><span className="text-red-500">0.9%</span> descrease for the last 7 days</p>
                             </div>
                         </div>
-                        <div className="w-full pt-0">
-                            {/* Profit */}
-                            <CountUp
-                                start={0}
-                                end={49.5}
-                                duration={.9}
-                                separator=","
-                                decimals={2}
-                                decimal="."
-                                prefix="$ "
-                            //   suffix=" left"
-                            >
-                                {({ countUpRef, start }) => (
-                                    <div className="">
-                                        <span className=" text-2xl font-extrabold" ref={countUpRef} />
-                                    </div>
-                                )}
-                            </CountUp>
-                            <p className="text-xs pt-2 text-text-color-black/60 font-medium "><span className="text-red-500">0.9%</span> descrease for the last 7 days</p>
+                        {/* Margin */}
+                        <div className="flex flex-col p-6 w-full h-fit border-b-[1px]">
+                            <div className="flex items-center justify-between w-full">
+                                <h1 className="text-sm text-text-color-black/60 font-medium">
+                                    Margin
+                                </h1>
+                                <div className="rounded-lg bg-stone-600/5 p-2 ">
+                                    <TbLayoutAlignCenter className="text-stone-500 text-2xl" />
+                                </div>
+                            </div>
+                            <div className="w-full pt-0">
+                                {/* Margin */}
+                                <CountUp
+                                    start={0}
+                                    end={92405}
+                                    duration={.9}
+                                    separator=","
+                                    decimals={2}
+                                    decimal="."
+                                    prefix="$ "
+                                //   suffix=" left"
+                                >
+                                    {({ countUpRef, start }) => (
+                                        <div className="">
+                                            <span className=" text-2xl font-extrabold" ref={countUpRef} />
+                                        </div>
+                                    )}
+                                </CountUp>
+                                <p className="text-xs pt-2 text-text-color-black/60 font-medium "><span className="text-green-600">32%</span> increase for the last 7 days</p>
+                            </div>
+                        </div>
+                        {/* Free Margin */}
+                        <div className="flex flex-col p-6 w-full h-fit border-r-[1px] ">
+                            <div className="flex items-center justify-between w-full">
+                                <h1 className="text-sm text-text-color-black/60 font-medium">
+                                    Free Margin
+                                </h1>
+                                <div className="rounded-lg bg-stone-600/5 p-2 ">
+                                    <TbLayoutAlignCenter className="text-stone-500 text-2xl" />
+                                </div>
+                            </div>
+                            <div className="w-full pt-0">
+                                {/* Free Margin */}
+                                <CountUp
+                                    start={0}
+                                    end={32218.2}
+                                    duration={.9}
+                                    separator=","
+                                    decimals={2}
+                                    decimal="."
+                                    prefix="$ "
+                                //   suffix=" left"
+                                >
+                                    {({ countUpRef, start }) => (
+                                        <div className="">
+                                            <span className=" text-2xl font-extrabold" ref={countUpRef} />
+                                        </div>
+                                    )}
+                                </CountUp>
+                                <p className="text-xs pt-2 text-text-color-black/60 font-medium "><span className="text-green-600">2%</span> increase for the last 7 days</p>
+                            </div>
+                        </div>
+                        {/* Margin Level */}
+                        <div className="flex flex-col p-6 w-full h-fit">
+                            <div className="flex items-center justify-between w-full">
+                                <h1 className="text-sm text-text-color-black/60 font-medium">
+                                    Margin Level %
+                                </h1>
+                                <div className="rounded-lg bg-stone-600/5 p-2 ">
+                                    <TbKeyframes className="text-stone-500 text-2xl" />
+                                </div>
+                            </div>
+                            <div className="w-full pt-0">
+                                {/* Balance */}
+                                <CountUp
+                                    start={0}
+                                    end={405}
+                                    duration={.9}
+                                    separator=","
+                                    // decimals={2}
+                                    decimal="."
+                                    // prefix="$ "
+                                    suffix=" %"
+                                >
+                                    {({ countUpRef, start }) => (
+                                        <div className="">
+                                            <span className=" text-2xl font-extrabold" ref={countUpRef} />
+                                        </div>
+                                    )}
+                                </CountUp>
+                                <p className="text-xs pt-2 text-text-color-black/60 font-medium "><span className="text-green-600">73%</span> increase for the last 7 days</p>
+                            </div>
                         </div>
                     </div>
-                    {/* Margin */}
-                    <div className="flex flex-col p-6 w-full h-fit border-b-[1px]">
-                        <div className="flex items-center justify-between w-full">
-                            <h1 className="text-sm text-text-color-black/60 font-medium">
-                                Margin
-                            </h1>
-                            <div className="rounded-lg bg-stone-600/5 p-2 ">
-                                <TbLayoutAlignCenter className="text-stone-500 text-2xl" />
-                            </div>
-                        </div>
-                        <div className="w-full pt-0">
-                            {/* Margin */}
-                            <CountUp
-                                start={0}
-                                end={92405}
-                                duration={.9}
-                                separator=","
-                                decimals={2}
-                                decimal="."
-                                prefix="$ "
-                            //   suffix=" left"
-                            >
-                                {({ countUpRef, start }) => (
-                                    <div className="">
-                                        <span className=" text-2xl font-extrabold" ref={countUpRef} />
-                                    </div>
-                                )}
-                            </CountUp>
-                            <p className="text-xs pt-2 text-text-color-black/60 font-medium "><span className="text-green-600">32%</span> increase for the last 7 days</p>
-                        </div>
-                    </div>
-                    {/* Free Margin */}
-                    <div className="flex flex-col p-6 w-full h-fit border-r-[1px] ">
-                        <div className="flex items-center justify-between w-full">
-                            <h1 className="text-sm text-text-color-black/60 font-medium">
-                                Free Margin
-                            </h1>
-                            <div className="rounded-lg bg-stone-600/5 p-2 ">
-                                <TbLayoutAlignCenter className="text-stone-500 text-2xl" />
-                            </div>
-                        </div>
-                        <div className="w-full pt-0">
-                            {/* Free Margin */}
-                            <CountUp
-                                start={0}
-                                end={32218.2}
-                                duration={.9}
-                                separator=","
-                                decimals={2}
-                                decimal="."
-                                prefix="$ "
-                            //   suffix=" left"
-                            >
-                                {({ countUpRef, start }) => (
-                                    <div className="">
-                                        <span className=" text-2xl font-extrabold" ref={countUpRef} />
-                                    </div>
-                                )}
-                            </CountUp>
-                            <p className="text-xs pt-2 text-text-color-black/60 font-medium "><span className="text-green-600">2%</span> increase for the last 7 days</p>
-                        </div>
-                    </div>
-                    {/* Margin Level */}
-                    <div className="flex flex-col p-6 w-full h-fit">
-                        <div className="flex items-center justify-between w-full">
-                            <h1 className="text-sm text-text-color-black/60 font-medium">
-                                Margin Level %
-                            </h1>
-                            <div className="rounded-lg bg-stone-600/5 p-2 ">
-                                <TbKeyframes className="text-stone-500 text-2xl" />
-                            </div>
-                        </div>
-                        <div className="w-full pt-0">
-                            {/* Balance */}
-                            <CountUp
-                                start={0}
-                                end={405}
-                                duration={.9}
-                                separator=","
-                                // decimals={2}
-                                decimal="."
-                                // prefix="$ "
-                                suffix=" %"
-                            >
-                                {({ countUpRef, start }) => (
-                                    <div className="">
-                                        <span className=" text-2xl font-extrabold" ref={countUpRef} />
-                                    </div>
-                                )}
-                            </CountUp>
-                            <p className="text-xs pt-2 text-text-color-black/60 font-medium "><span className="text-green-600">73%</span> increase for the last 7 days</p>
-                        </div>
+                    <div className=" w-full h-fit bg-white shadow-lg shadow-stone-600/10 rounded-2xl flex flex-col gap-4 p-6">
                     </div>
                 </div>
             </div>
