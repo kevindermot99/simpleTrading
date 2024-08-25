@@ -9,7 +9,7 @@ function Home() {
         <div className='main-header min-h-[200px] px-10 pt-5 text-text-color-white tracking-tight'>
             {/* Greetings */}
             <h1 className=' font-medium text-xl'>Welcome back, Petter!</h1>
-            <div className='flex'></div>
+            <div className='flex items-center'></div>
         </div>
     </div>
   )
