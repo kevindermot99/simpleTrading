@@ -98,7 +98,7 @@ function Home() {
                                 theme={{
                                     token: {
                                         // Seed Token
-                                        colorPrimary: "#fff",
+                                        colorPrimary: "#d1d1d1",
                                         borderRadius: 0,
                                         colorBorder: "#00000000",
                                         colorBgContainer: "#e5e7eb70",
