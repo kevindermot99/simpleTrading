@@ -27,10 +27,10 @@ function Navbar() {
       </div>
       {/* Search, Notifications and Profile image */}
       <div className='flex items-center'>
-        <Link to="/" className={`text-xl p-2 hover:bg-border-lines-light/70 ${scrolled ? 'hover:bg-stone-300/40' : 'hover:bg-stone-300/10' }`}>
+        <Link to="/" className={`text-xl p-2${scrolled ? '' : '' }`}>
           <LuSearch />
         </Link>
-        <Link to="/" className={`text-xl p-2 hover:bg-border-lines-light/70 ${scrolled ? 'hover:bg-stone-300/40' : 'hover:bg-stone-300/10' }`}>
+        <Link to="/" className={`text-xl p-2${scrolled ? '' : '' }`}>
           <LuBell />
         </Link>
         <Link to="/" className='text-sm flex items-center gap-0 ml-2'>
