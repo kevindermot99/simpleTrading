@@ -21,6 +21,7 @@ export default {
         "body-white": "#fafafa",
         "body-black": "#18181b",
         "border-lines-light": "#e5e7eb",
+        "button-color": "#21232a",
       },
     },
   },
