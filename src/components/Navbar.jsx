@@ -1,5 +1,5 @@
 import React from 'react'
-import { LuChevronDown, LuUser2 } from 'react-icons/lu'
+import { LuBell, LuChevronDown, LuSearch, LuUser2 } from 'react-icons/lu'
 import { Link } from 'react-router-dom'
 
 function Navbar() {
@@ -19,8 +19,13 @@ function Navbar() {
       </div>
       {/* Search, Notifications and Profile image */}
       <div className='flex items-center'>
-        <Link to="/" className='text-sm px-3 py-2 hover:bg-border-lines-light/70'></Link>
-        <Link to="/" className='text-sm flex items-center gap-0'>
+        <Link to="/" className='text-xl p-2 hover:bg-border-lines-light/70'>
+          <LuSearch />
+        </Link>
+        <Link to="/" className='text-xl p-2 hover:bg-border-lines-light/70'>
+          <LuBell />
+        </Link>
+        <Link to="/" className='text-sm flex items-center gap-0 ml-2'>
           <div className='h-[30px] text-xs w-auto aspect-square flex items-center justify-center font-bold rounded-full bg-border-lines-light'>
             KD
           </div>
