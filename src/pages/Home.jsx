@@ -20,6 +20,7 @@ function Home() {
             DoneAt: "June 12, 2023, 11:21 PM",
             Type: "Buy",
             Size: "0.03",
+            pl: {status: "loss", amount: "$12"},
             Symbol: "audusd",
         },
         {
@@ -28,6 +29,7 @@ function Home() {
             DoneAt: "June 13, 2023, 09:45 AM",
             Type: "Sell",
             Size: "0.10",
+            pl: {status: "profit", amount: "$30"},
             Symbol: "eurusd",
         },
         {
@@ -36,6 +38,7 @@ function Home() {
             DoneAt: "June 14, 2023, 03:30 PM",
             Type: "Buy",
             Size: "0.05",
+            pl: {status: "profit", amount: "$322"},
             Symbol: "gbpusd",
         },
         {
@@ -44,6 +47,7 @@ function Home() {
             DoneAt: "June 15, 2023, 07:15 PM",
             Type: "Sell",
             Size: "0.02",
+            pl: {status: "loss", amount: "$1090"},
             Symbol: "usdchf",
         },
         {
@@ -52,6 +56,7 @@ function Home() {
             DoneAt: "June 16, 2023, 12:00 PM",
             Type: "Buy",
             Size: "0.07",
+            pl: {status: "profit", amount: "$690"},
             Symbol: "usdjpy",
         },
     ];
@@ -364,7 +369,7 @@ function Home() {
                                         size
                                     </th>
                                     <th scope="col" class=" py-3">
-                                        Status
+                                        Profit/Loss
                                     </th>
                                     <th scope="col" class=" py-3">
                                         symbol
@@ -381,7 +386,10 @@ function Home() {
                                         <td class=" py-3">{transaction.DoneAt}</td>
                                         <td class=" py-3">{transaction.Type}</td>
                                         <td class=" py-3">{transaction.Size}</td>
-                                        <td class=" py-3">{transaction.Size}</td>
+                                        <td class=" py-3">
+                                            {transaction.pl.status === 'profit' && <span className="text-green-600 font-medium">+{transaction.pl.amount}</span> }
+                                            {transaction.pl.status === 'loss' && <span className="text-red-500 font-medium">-{transaction.pl.amount}</span> }
+                                        </td>
                                         <td class=" py-3">{transaction.Symbol}</td>
                                     </tr>
                                 ))}
