@@ -24,11 +24,4 @@
 
 .main-header {
   background: #21232a url('./assets/header-bg.jpg') repeat 0 0;
-  position: relative;
-  width: 100%;
-  height: auto;
-  z-index: 9999;
-  padding: 20px 0;
-  left: 0;
-  top: 0;
 }
