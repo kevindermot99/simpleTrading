@@ -71,9 +71,45 @@ function Leaders() {
             </div>
             <div className="flex gap-5 w-full h-full bg-transparent mt-[-110px] px-10 text-text-color-black pb-10">
                 <div className="w-full min-h-full flex flex-col gap-5">
-                    <div className="w-full h-fit bg-white shadow-lg shadow-stone-600/10 grid gap-0 grid-cols-2 ">
+                    <div className="w-full h-fit bg-white shadow-lg shadow-stone-600/10 grid gap-0 grid-cols-1 ">
                         {/* Profit */}
                         <div className="flex flex-col p-6 w-full h-fit border-r-[1px] border-b-[1px] ">
+                            <div className="flex items-center justify-between w-full">
+                                <h1 className="text-sm text-text-color-black/60 font-medium">
+                                    Profit
+                                </h1>
+                            </div>
+                            <div className="w-full pt-0">
+                                {/* Profit */}
+                                <CountUp
+                                    start={0}
+                                    end={49.5}
+                                    duration={0.9}
+                                    separator=","
+                                    decimals={2}
+                                    decimal="."
+                                    prefix="$ "
+                                //   suffix=" left"
+                                >
+                                    {({ countUpRef, start }) => (
+                                        <div className="">
+                                            <span
+                                                className=" text-2xl font-extrabold"
+                                                ref={countUpRef}
+                                            />
+                                        </div>
+                                    )}
+                                </CountUp>
+                                <p className="text-xs pt-2 text-text-color-black/60 font-medium ">
+                                    <span className="text-red-500">0.9%</span> descrease for the
+                                    last 7 days
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-full h-fit bg-white shadow-lg shadow-stone-600/10 grid gap-0 grid-cols-3 ">
+                        {/* Profit */}
+                        <div className="flex flex-col p-6 w-full h-fit border-r-[1px] ">
                             <div className="flex items-center justify-between w-full">
                                 <h1 className="text-sm text-text-color-black/60 font-medium">
                                     Profit
@@ -110,7 +146,7 @@ function Leaders() {
                             </div>
                         </div>
                         {/* Margin */}
-                        <div className="flex flex-col p-6 w-full h-fit border-b-[1px]">
+                        <div className="flex flex-col p-6 w-full h-fit border-r-[1px]">
                             <div className="flex items-center justify-between w-full">
                                 <h1 className="text-sm text-text-color-black/60 font-medium">
                                     Margin
@@ -147,7 +183,7 @@ function Leaders() {
                             </div>
                         </div>
                         {/* Free Margin */}
-                        <div className="flex flex-col p-6 w-full h-fit border-r-[1px] ">
+                        <div className="flex flex-col p-6 w-full h-fit ">
                             <div className="flex items-center justify-between w-full">
                                 <h1 className="text-sm text-text-color-black/60 font-medium">
                                     Free Margin
@@ -179,43 +215,6 @@ function Leaders() {
                                 </CountUp>
                                 <p className="text-xs pt-2 text-text-color-black/60 font-medium ">
                                     <span className="text-green-600">2%</span> increase for the
-                                    last 7 days
-                                </p>
-                            </div>
-                        </div>
-                        {/* Margin Level */}
-                        <div className="flex flex-col p-6 w-full h-fit">
-                            <div className="flex items-center justify-between w-full">
-                                <h1 className="text-sm text-text-color-black/60 font-medium">
-                                    Margin Level %
-                                </h1>
-                                <div className=" bg-stone-600/5 p-2 ">
-                                    <TbKeyframes className="text-stone-500 text-2xl" />
-                                </div>
-                            </div>
-                            <div className="w-full pt-0">
-                                {/* Balance */}
-                                <CountUp
-                                    start={0}
-                                    end={405}
-                                    duration={0.9}
-                                    separator=","
-                                    // decimals={2}
-                                    decimal="."
-                                    // prefix="$ "
-                                    suffix=" %"
-                                >
-                                    {({ countUpRef, start }) => (
-                                        <div className="">
-                                            <span
-                                                className=" text-2xl font-extrabold"
-                                                ref={countUpRef}
-                                            />
-                                        </div>
-                                    )}
-                                </CountUp>
-                                <p className="text-xs pt-2 text-text-color-black/60 font-medium ">
-                                    <span className="text-green-600">73%</span> increase for the
                                     last 7 days
                                 </p>
                             </div>
