@@ -236,7 +236,7 @@ function Transactions() {
                                 {testTransactions.map((transaction, index) => (
                                     <tr class="even:bg-white odd:bg-border-lines-light/40 border-b text-sm text-text-color-black/70 ">
                                         <td class=" py-3 px-2 text-center">{index+1}</td>
-                                        <td class=" py-3 font-medium text-text-color-black whitespace-nowrap tracking-tight ">
+                                        <td class=" py-3 text-left font-medium text-text-color-black whitespace-nowrap tracking-tight ">
                                             {transaction.name}
                                         </td>
                                         <td class=" py-3">{transaction.OrderId}</td>
