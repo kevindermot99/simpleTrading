@@ -199,7 +199,7 @@ function Leaders() {
                             <div ref={containerRef} className="w-full flex items-start gap-1 overflow-x-auto pb-2">
                                 {testMotivations.map((motive, index) => (
                                     <button className="flex items-center justify-center select-none flex-col gap-3 w-fit p-2 hover:opacity-80 cursor-pointer">
-                                        <div className="pointer-events-none min-w-16 min-h-16 flex rounded-full ring-[3px] ring-button-color/70 ring-offset-2 ring-offset-white">
+                                        <div className="pointer-events-none min-w-16 min-h-16 flex rounded-full ring-[3px] ring-button-color/40 ring-offset-2 ring-offset-white">
                                             {motive.pfp !== "" ? 
                                             <img src={motive.pfp} alt="pfp" className="w-16 h-16 rounded-full" />
                                             :
