@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { LuBell, LuChevronDown, LuSearch, LuUser2 } from 'react-icons/lu'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 70 ? true : false);
@@ -16,21 +17,24 @@ function Navbar() {
       {/* Logo & Links */}
       <div className='flex items-center h-fit w-fit gap-1'>
         <h1 className='font-bold text-3xl font-DMSerifText mr-4'>st.</h1>
-        <div className='flex items-center'>
-          <Link to="/" className={`text-sm px-3 py-2 ${scrolled ? 'hover:bg-stone-300/40' : 'hover:bg-stone-300/10' }`}>Dashboard</Link>
-          <Link to="/" className={`text-sm px-3 py-2 ${scrolled ? 'hover:bg-stone-300/40' : 'hover:bg-stone-300/10' }`}>Leaders</Link>
-          <Link to="/" className={`text-sm px-3 py-2 ${scrolled ? 'hover:bg-stone-300/40' : 'hover:bg-stone-300/10' }`}>Find Agents</Link>
-          <Link to="/" className={`text-sm px-3 py-2 ${scrolled ? 'hover:bg-stone-300/40' : 'hover:bg-stone-300/10' }`}>Signals</Link>
-          <Link to="/" className={`text-sm px-3 py-2 ${scrolled ? 'hover:bg-stone-300/40' : 'hover:bg-stone-300/10' }`}>Learn</Link>
-          <Link to="/" className={`text-sm px-3 py-2 ${scrolled ? 'hover:bg-stone-300/40' : 'hover:bg-stone-300/10' }`}>Help Center</Link>
+        <div className='flex items-center gap-1'>
+          <Link to="/" className={`text-sm px-3 py-2 ${scrolled
+            ? `hover:bg-stone-300/40 ${location.pathname === '/' || location.pathname === '/transactions' ? 'bg-stone-300/40' : ''}`
+            : `hover:bg-stone-300/10 ${location.pathname === '/' || location.pathname === '/transactions' ? 'bg-stone-300/10' : ''}`
+            }`}>Dashboard</Link>
+          <Link to="/" className={`text-sm px-3 py-2 ${scrolled ? `hover:bg-stone-300/40 ${location.pathname === '/leaders' ? 'bg-stone-300/40' : ''}` : `hover:bg-stone-300/10 ${location.pathname === '/leaders' ? 'bg-stone-300/10' : ''}`}`}>Leaders</Link>
+          <Link to="/" className={`text-sm px-3 py-2 ${scrolled ? `hover:bg-stone-300/40 ${location.pathname === '/findAgents' ? 'bg-stone-300/40' : ''}` : `hover:bg-stone-300/10 ${location.pathname === '/findAgents' ? 'bg-stone-300/10' : ''}`}`}>Find Agents</Link>
+          <Link to="/" className={`text-sm px-3 py-2 ${scrolled ? `hover:bg-stone-300/40 ${location.pathname === '/Signals' ? 'bg-stone-300/40' : ''}` : `hover:bg-stone-300/10 ${location.pathname === '/Signals' ? 'bg-stone-300/10' : ''}`}`}>Signals</Link>
+          <Link to="/" className={`text-sm px-3 py-2 ${scrolled ? `hover:bg-stone-300/40 ${location.pathname === '/learn' ? 'bg-stone-300/40' : ''}` : `hover:bg-stone-300/10 ${location.pathname === '/learn' ? 'bg-stone-300/10' : ''}`}`}>Learn</Link>
+          <Link to="/" className={`text-sm px-3 py-2 ${scrolled ? `hover:bg-stone-300/40 ${location.pathname === '/HelpCenter' ? 'bg-stone-300/40' : ''}` : `hover:bg-stone-300/10 ${location.pathname === '/HelpCenter' ? 'bg-stone-300/10' : ''}`}`}>Help Center</Link>
         </div>
       </div>
       {/* Search, Notifications and Profile image */}
       <div className='flex items-center'>
-        <Link to="/" className={`text-xl p-2${scrolled ? '' : '' }`}>
+        <Link to="/" className={`text-xl p-2${scrolled ? '' : ''}`}>
           <LuSearch />
         </Link>
-        <Link to="/" className={`text-xl p-2${scrolled ? '' : '' }`}>
+        <Link to="/" className={`text-xl p-2${scrolled ? '' : ''}`}>
           <LuBell />
         </Link>
         <Link to="/" className='text-sm flex items-center gap-0 ml-2'>
