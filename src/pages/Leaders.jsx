@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Navbar from "../components/Navbar";
 import { Select, ConfigProvider } from "antd";
 import CountUp from "react-countup";
@@ -12,12 +12,43 @@ import {
     TbSpacingHorizontal,
 } from "react-icons/tb";
 import { Link } from "react-router-dom";
-import useScrollOnDrag from 'react-scroll-ondrag';
 
 
 function Leaders() {
-    const ref = useRef();
-    const { events } = useScrollOnDrag(ref);
+    const containerRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+    const onMouseDown = (e) => {
+        // Check if the left mouse button is clicked
+        if (e.button !== 0) return;
+        setIsDragging(true);
+        setStartX(e.pageX - containerRef.current.offsetLeft);
+        setScrollLeft(containerRef.current.scrollLeft);
+      };
+      const onMouseMove = (e) => {
+        if (!isDragging) return;
+        const x = e.pageX - containerRef.current.offsetLeft;
+        const walk = (x - startX) * 0.8; // Adjust the scroll speed
+        containerRef.current.scrollLeft = scrollLeft - walk;
+      };
+      const onMouseUp = () => {
+        setIsDragging(false);
+      };
+      useEffect(() => {
+        const container = containerRef.current;
+        container.addEventListener('mousedown', onMouseDown);
+        container.addEventListener('mousemove', onMouseMove);
+        container.addEventListener('mouseup', onMouseUp);
+        container.addEventListener('mouseleave', onMouseUp);
+        return () => {
+          container.removeEventListener('mousedown', onMouseDown);
+          container.removeEventListener('mousemove', onMouseMove);
+          container.removeEventListener('mouseup', onMouseUp);
+          container.removeEventListener('mouseleave', onMouseUp);
+        };
+      }, [isDragging, startX, scrollLeft]);
 
     const testTransactions = [
         {
@@ -165,10 +196,10 @@ function Leaders() {
                             <h1 className="text-xs text-text-color-black/60 font-medium">
                                 Leaderboard Motivation
                             </h1>
-                            <div {...events} ref={ref} className="w-full flex cursor-grab active:cursor-grabbing items-start gap-1 overflow-x-auto pb-2">
+                            <div ref={containerRef} className="w-full flex items-start gap-1 overflow-x-auto pb-2">
                                 {testMotivations.map((motive, index) => (
-                                    <div className="flex items-center justify-center select-none flex-col gap-3 w-fit p-2">
-                                        <div className="pointer-events-none min-w-16 min-h-16 flex rounded-full ring-[3px] ring-button-color/80 ring-offset-2 ring-offset-white">
+                                    <button className="flex items-center justify-center select-none flex-col gap-3 w-fit p-2 hover:opacity-80 cursor-pointer">
+                                        <div className="pointer-events-none min-w-16 min-h-16 flex rounded-full ring-[3px] ring-button-color/70 ring-offset-2 ring-offset-white">
                                             {motive.pfp !== "" ? 
                                             <img src={motive.pfp} alt="pfp" className="w-16 h-16 rounded-full" />
                                             :
@@ -178,7 +209,7 @@ function Leaders() {
                                         <h1 className=" text-xs text-center min-w-[70px] max-w-[70px] truncate text-text-color-black/60 font-semibold">
                                             {motive.name}
                                         </h1>
-                                    </div>
+                                    </button>
                                 ))}
                             </div>
                         </div>
