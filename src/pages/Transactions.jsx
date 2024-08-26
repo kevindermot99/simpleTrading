@@ -173,11 +173,6 @@ function Transactions() {
                     >
                         Transactions
                     </button>
-                    <button
-                        className={`text-sm px-4 py-2 font-medium hover:bg-stone-300/10 border-b-2 border-transparent opacity-50 hover:opacity-100`}
-                    >
-                        Invoices
-                    </button>
                 </div>
             </div>
             <div className="flex gap-5 w-full h-full bg-transparent mt-[-50px] px-10 text-text-color-black pb-10">
