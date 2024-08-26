@@ -96,11 +96,12 @@ function Home() {
                                         colorPrimary: "#21232a",
                                         colorPrimaryBg: "#e8e8e8",
                                         borderRadius: 0,
-                                        colorBorder: "#00000000",
+                                        colorBorder: "transparent",
                                         colorBgContainer: "#e5e7eb70",
                                         colorBgTextHover: "red",
                                         zIndexPopupBase: "1",
                                         zIndexBase: "1"
+                                        
                                     },
                                 }}
                             >
