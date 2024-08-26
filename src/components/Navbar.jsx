@@ -22,7 +22,7 @@ function Navbar() {
             ? `hover:bg-stone-300/40 ${location.pathname === '/' || location.pathname === '/transactions' ? 'bg-stone-300/40' : ''}`
             : `hover:bg-stone-300/10 ${location.pathname === '/' || location.pathname === '/transactions' ? 'bg-stone-300/10' : ''}`
             }`}>Dashboard</Link>
-          <Link to="/" className={`text-sm px-3 py-2 ${scrolled ? `hover:bg-stone-300/40 ${location.pathname === '/leaders' ? 'bg-stone-300/40' : ''}` : `hover:bg-stone-300/10 ${location.pathname === '/leaders' ? 'bg-stone-300/10' : ''}`}`}>Leaders</Link>
+          <Link to="/leaders" className={`text-sm px-3 py-2 ${scrolled ? `hover:bg-stone-300/40 ${location.pathname === '/leaders' ? 'bg-stone-300/40' : ''}` : `hover:bg-stone-300/10 ${location.pathname === '/leaders' ? 'bg-stone-300/10' : ''}`}`}>Leaders</Link>
           <Link to="/" className={`text-sm px-3 py-2 ${scrolled ? `hover:bg-stone-300/40 ${location.pathname === '/findAgents' ? 'bg-stone-300/40' : ''}` : `hover:bg-stone-300/10 ${location.pathname === '/findAgents' ? 'bg-stone-300/10' : ''}`}`}>Find Agents</Link>
           <Link to="/" className={`text-sm px-3 py-2 ${scrolled ? `hover:bg-stone-300/40 ${location.pathname === '/Signals' ? 'bg-stone-300/40' : ''}` : `hover:bg-stone-300/10 ${location.pathname === '/Signals' ? 'bg-stone-300/10' : ''}`}`}>Signals</Link>
           <Link to="/" className={`text-sm px-3 py-2 ${scrolled ? `hover:bg-stone-300/40 ${location.pathname === '/learn' ? 'bg-stone-300/40' : ''}` : `hover:bg-stone-300/10 ${location.pathname === '/learn' ? 'bg-stone-300/10' : ''}`}`}>Learn</Link>
