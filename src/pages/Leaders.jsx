@@ -168,8 +168,12 @@ function Leaders() {
                             <div {...events} ref={ref} className="w-full flex cursor-grab active:cursor-grabbing items-start gap-1 overflow-x-auto pb-2">
                                 {testMotivations.map((motive, index) => (
                                     <div className="flex items-center justify-center select-none flex-col gap-3 w-fit p-2">
-                                        <div className="pointer-events-none min-w-16 min-h-16 rounded-full ring-[3px] ring-button-color/80 ring-offset-2 ring-offset-white">
+                                        <div className="pointer-events-none min-w-16 min-h-16 flex rounded-full ring-[3px] ring-button-color/80 ring-offset-2 ring-offset-white">
+                                            {motive.pfp !== "" ? 
                                             <img src={motive.pfp} alt="pfp" className="w-16 h-16 rounded-full" />
+                                            :
+                                            <h1 className="w-16 h-16 rounded-full flex items-center justify-center font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-b from-text-color-black to-text-color-black/20 uppercase">{motive.name.slice(0, 2)}</h1>
+                                            }
                                         </div>
                                         <h1 className=" text-xs text-center min-w-[70px] max-w-[70px] truncate text-text-color-black/60 font-semibold">
                                             {motive.name}
