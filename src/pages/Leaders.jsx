@@ -224,6 +224,9 @@ function Leaders() {
                             <thead class="text-xs text-gray-700 uppercase border-b">
                                 <tr>
                                     <th scope="col" class=" pb-3">
+                                        
+                                    </th>
+                                    <th scope="col" class=" pb-3">
                                         Trader name
                                     </th>
                                     <th scope="col" class=" pb-3">
@@ -249,6 +252,7 @@ function Leaders() {
                             <tbody>
                                 {testTransactions.map((transaction, index) => (
                                     <tr class="even:bg-white odd:bg-border-lines-light/40 border-b text-sm text-text-color-black/70 ">
+                                        <td class=" py-3 pl-5">{index+1}</td>
                                         <td class=" py-3 font-medium text-text-color-black whitespace-nowrap tracking-tight ">
                                             {transaction.name}
                                         </td>
