@@ -204,7 +204,7 @@ function Leaders() {
                             <div ref={containerRef} className="w-full flex items-start gap-1 overflow-x-auto pb-2">
                                 {testMotivations.map((motive, index) => (
                                     <button className="flex items-center justify-center select-none flex-col gap-3 w-fit p-2 hover:opacity-80 cursor-pointer">
-                                        <div className="pointer-events-none min-w-16 min-h-16 flex rounded-full ring-[3px] ring-button-color/40 ring-offset-2 ring-offset-white">
+                                        <div className="pointer-events-none min-w-16 min-h-16 flex rounded-full ring-[3px] bg-stone-200 ring-button-color/40 ring-offset-2 ring-offset-white">
                                             {motive.pfp !== "" ?
                                                 <img src={motive.pfp} alt="pfp" className="w-16 h-16 rounded-full" />
                                                 :
@@ -232,7 +232,7 @@ function Leaders() {
 
                                     </th>
                                     <th scope="col" class=" pb-3">
-                                        Trader name
+                                        Trader
                                     </th>
                                     <th scope="col" class=" pb-3">
                                         Order id
@@ -258,8 +258,15 @@ function Leaders() {
                                 {testTransactions.map((transaction, index) => (
                                     <tr class="even:bg-white odd:bg-border-lines-light/40 border-b text-sm text-text-color-black/70 ">
                                         <td class=" py-3 pl-5">{index + 1}</td>
-                                        <td class=" py-3 font-medium text-text-color-black whitespace-nowrap tracking-tight ">
-                                            {transaction.name}
+                                        <td class=" py-3 font-medium text-text-color-black whitespace-nowrap tracking-tight flex items-center gap-2 ">
+                                            <div className="pointer-events-none w-7 h-7 flex rounded-full bg-stone-200">
+                                                {transaction.pfp !== "" ?
+                                                    <img src={transaction.pfp} alt="pfp" className="w-full h-full rounded-full" />
+                                                    :
+                                                    <h1 className="w-full h-full rounded-full flex items-center justify-center font-bold text-xs text-transparent bg-clip-text bg-gradient-to-b from-text-color-black to-text-color-black/20 uppercase">{transaction.name.slice(0, 2)}</h1>
+                                                }
+                                            </div>
+                                            <Link to={'/'} className="hover:underline">{transaction.name}</Link>
                                         </td>
                                         <td class=" py-3">{transaction.OrderId}</td>
                                         <td class=" py-3">{transaction.DoneAt}</td>
