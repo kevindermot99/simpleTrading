@@ -153,13 +153,13 @@ function Leaders() {
             </div> */}
             <div className="flex gap-5 w-full h-full bg-transparent mt-[-110] px-10 text-text-color-black pb-10">
                 <div className="w-full min-h-full flex flex-col gap-5">
-                    <div className="w-full h-fit bg-white shadow-lg shadow-stone-600/10 grid gap-0 grid-cols-1 ">
+                    <div className="w-full h-fit bg-white shadow-stone-600/10 grid gap-0 grid-cols-1 ">
                         {/* Profit */}
-                        <div className="flex flex-col p-6 w-full h-fit border-r-[1px] border-b-[1px] gap-2 ">
+                        <div className="flex flex-col p-0 mt-5 w-full h-fit gap-2 ">
                             <h1 className="text-xs text-text-color-black/60 font-medium">
                                 Recent Transactions History
                             </h1>
-                            <div className="w-full flex items-start">
+                            <div className="w-full flex items-start overflow-x-auto pb-3">
                                 {testMotivations.map((motive, index) => (
                                     <div className="flex items-center justify-center flex-col gap-3 w-fit cursor-pointer hover:bg-border-lines-light/70 pt-3 pb-2 px-2">
                                         <div className="min-w-16 min-h-16 rounded-full ring-[3px] ring-orange-300 ring-offset-2 ring-offset-white">
