@@ -62,7 +62,7 @@ function Home() {
     ];
     return (
         <div className="bg-body-white w-full h-full min-h-svh relative">
-            <Navbar />
+            <Navbar dynamic="on" />
             {/* Hero */}
             <div className="main-header min-h-[170px] px-10 pt-5 text-text-color-white tracking-tight">
                 {/* Greetings */}
