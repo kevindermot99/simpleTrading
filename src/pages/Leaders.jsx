@@ -66,7 +66,7 @@ function Leaders() {
             {/* Hero */}
             <div className="main-header min-h-[170px] px-10 pt-5 text-text-color-white tracking-tight">
                 {/* Greetings */}
-                <h1 className=" font-medium text-xl">Welcome back, Petter!</h1>
+                <h1 className=" font-medium text-xl">Leaderboard</h1>
                 
             </div>
             <div className="flex gap-5 w-full h-full bg-transparent mt-[-110px] px-10 text-text-color-black pb-10">
