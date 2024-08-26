@@ -203,13 +203,13 @@ function Transactions() {
                                 <button type="submit" className="bg-button-color py-2 text-xs text-white font-medium px-6">Filter</button>
                             </form>
                         </div>
-                        <table class="w-full text-sm text-left table-auto">
+                        <table class="w-full text-sm text-center table-auto">
                             <thead class="text-xs text-gray-700 uppercase border-b">
                                 <tr>
-                                <th scope="col" class=" py-3">
+                                <th scope="col" class=" text-left py-3">
 
                                     </th>
-                                    <th scope="col" class=" py-3">
+                                    <th scope="col" class=" text-left py-3">
                                         Trader name
                                     </th>
                                     <th scope="col" class=" py-3">
