@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 function Home() {
     const testTransactions = [
         {
+            pfp: "https://windybot.com/images/rabbit-anime.jpg",
             name: "Alice Johnson",
             OrderId: "0R932HB984",
             DoneAt: "June 12, 2023, 11:21 PM",
@@ -24,6 +25,7 @@ function Home() {
             Symbol: "audusd",
         },
         {
+            pfp: "https://images.generated.photos/vmb60Gy5dtfzvX6D8wAVbhdQ04vMzUJTHP_HLuhpoQA/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92Ml8w/NTQ2MTAxLmpwZw.jpg",
             name: "Bob Smith",
             OrderId: "1T847CZX912",
             DoneAt: "June 13, 2023, 09:45 AM",
@@ -33,6 +35,7 @@ function Home() {
             Symbol: "eurusd",
         },
         {
+            pfp: "",
             name: "Carol Davis",
             OrderId: "2F658DVQ731",
             DoneAt: "June 14, 2023, 03:30 PM",
@@ -42,6 +45,7 @@ function Home() {
             Symbol: "gbpusd",
         },
         {
+            pfp: "https://images.generated.photos/yz0oz48xDKxIIyh3EHddnjACyS0vSaw00o45E7nybis/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy8wNjU2/MDYyLmpwZw.jpg",
             name: "David Wilson",
             OrderId: "3J249LKP654",
             DoneAt: "June 15, 2023, 07:15 PM",
@@ -51,6 +55,107 @@ function Home() {
             Symbol: "usdchf",
         },
         {
+            pfp: "https://images.generated.photos/NoZffSFDtiQf_rznmkReTzZhMoz7aOi3kHi7_mziBo0/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92Ml8w/OTIzMTY0LmpwZw.jpg",
+            name: "Eve Clark",
+            OrderId: "4M860RZP375",
+            DoneAt: "June 16, 2023, 12:00 PM",
+            Type: "Buy",
+            Size: "0.07",
+            pl: { status: "profit", amount: "$690" },
+            Symbol: "usdjpy",
+        },
+        {
+            pfp: "https://windybot.com/images/rabbit-anime.jpg",
+            name: "Alice Johnson",
+            OrderId: "0R932HB984",
+            DoneAt: "June 12, 2023, 11:21 PM",
+            Type: "Buy",
+            Size: "0.03",
+            pl: { status: "loss", amount: "$12" },
+            Symbol: "audusd",
+        },
+        {
+            pfp: "https://images.generated.photos/vmb60Gy5dtfzvX6D8wAVbhdQ04vMzUJTHP_HLuhpoQA/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92Ml8w/NTQ2MTAxLmpwZw.jpg",
+            name: "Bob Smith",
+            OrderId: "1T847CZX912",
+            DoneAt: "June 13, 2023, 09:45 AM",
+            Type: "Sell",
+            Size: "0.10",
+            pl: { status: "profit", amount: "$30" },
+            Symbol: "eurusd",
+        },
+        {
+            pfp: "",
+            name: "Carol Davis",
+            OrderId: "2F658DVQ731",
+            DoneAt: "June 14, 2023, 03:30 PM",
+            Type: "Buy",
+            Size: "0.05",
+            pl: { status: "profit", amount: "$322" },
+            Symbol: "gbpusd",
+        },
+        {
+            pfp: "https://images.generated.photos/yz0oz48xDKxIIyh3EHddnjACyS0vSaw00o45E7nybis/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy8wNjU2/MDYyLmpwZw.jpg",
+            name: "David Wilson",
+            OrderId: "3J249LKP654",
+            DoneAt: "June 15, 2023, 07:15 PM",
+            Type: "Sell",
+            Size: "0.02",
+            pl: { status: "loss", amount: "$1090" },
+            Symbol: "usdchf",
+        },
+        {
+            pfp: "https://images.generated.photos/NoZffSFDtiQf_rznmkReTzZhMoz7aOi3kHi7_mziBo0/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92Ml8w/OTIzMTY0LmpwZw.jpg",
+            name: "Eve Clark",
+            OrderId: "4M860RZP375",
+            DoneAt: "June 16, 2023, 12:00 PM",
+            Type: "Buy",
+            Size: "0.07",
+            pl: { status: "profit", amount: "$690" },
+            Symbol: "usdjpy",
+        },
+        {
+            pfp: "https://windybot.com/images/rabbit-anime.jpg",
+            name: "Alice Johnson",
+            OrderId: "0R932HB984",
+            DoneAt: "June 12, 2023, 11:21 PM",
+            Type: "Buy",
+            Size: "0.03",
+            pl: { status: "loss", amount: "$12" },
+            Symbol: "audusd",
+        },
+        {
+            pfp: "https://images.generated.photos/vmb60Gy5dtfzvX6D8wAVbhdQ04vMzUJTHP_HLuhpoQA/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92Ml8w/NTQ2MTAxLmpwZw.jpg",
+            name: "Bob Smith",
+            OrderId: "1T847CZX912",
+            DoneAt: "June 13, 2023, 09:45 AM",
+            Type: "Sell",
+            Size: "0.10",
+            pl: { status: "profit", amount: "$30" },
+            Symbol: "eurusd",
+        },
+        {
+            pfp: "",
+            name: "Carol Davis",
+            OrderId: "2F658DVQ731",
+            DoneAt: "June 14, 2023, 03:30 PM",
+            Type: "Buy",
+            Size: "0.05",
+            pl: { status: "profit", amount: "$322" },
+            Symbol: "gbpusd",
+        },
+        {
+            pfp: "https://images.generated.photos/yz0oz48xDKxIIyh3EHddnjACyS0vSaw00o45E7nybis/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy8wNjU2/MDYyLmpwZw.jpg",
+            name: "David Wilson",
+            OrderId: "3J249LKP654",
+            DoneAt: "June 15, 2023, 07:15 PM",
+            Type: "Sell",
+            Size: "0.02",
+            pl: { status: "loss", amount: "$1090" },
+            Symbol: "usdchf",
+        },
+        {
+            pfp: "https://images.generated.photos/NoZffSFDtiQf_rznmkReTzZhMoz7aOi3kHi7_mziBo0/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92Ml8w/OTIzMTY0LmpwZw.jpg",
             name: "Eve Clark",
             OrderId: "4M860RZP375",
             DoneAt: "June 16, 2023, 12:00 PM",
@@ -101,7 +206,7 @@ function Home() {
                                         colorBgTextHover: "red",
                                         zIndexPopupBase: "1",
                                         zIndexBase: "1"
-                                        
+
                                     },
                                 }}
                             >
@@ -355,13 +460,13 @@ function Home() {
                                 View all
                             </Link>
                         </div>
-                        <table class="w-full text-sm text-left table-auto">
+                        <table class="w-full text-sm text-center table-auto">
                             <thead class="text-xs text-gray-700 uppercase border-b">
                                 <tr>
-                                    <th scope="col" class=" py-3">
-                                        
+                                    <th scope="col" class=" text-left py-3">
+
                                     </th>
-                                    <th scope="col" class=" py-3">
+                                    <th scope="col" class=" text-left py-3">
                                         Trader name
                                     </th>
                                     <th scope="col" class=" py-3">
@@ -385,11 +490,18 @@ function Home() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {testTransactions.map((transaction, index) => (
+                                {testTransactions.slice(0, 5).map((transaction, index) => (
                                     <tr class="even:bg-white odd:bg-border-lines-light/40 border-b text-sm text-text-color-black/70 ">
-                                        <td class=" py-3 px-5">{index+1}</td>
-                                        <td class=" py-3 font-medium text-text-color-black whitespace-nowrap tracking-tight ">
-                                            {transaction.name}
+                                        <td class=" py-3 px-2 text-center">{testTransactions.length - index}</td>
+                                        <td class=" py-3 text-left font-medium text-text-color-black whitespace-nowrap tracking-tight flex items-center gap-2 ">
+                                            <div className="pointer-events-none w-7 h-7 flex rounded-full bg-stone-200">
+                                                {transaction.pfp !== "" ?
+                                                    <img src={transaction.pfp} alt="pfp" className="w-full h-full rounded-full" />
+                                                    :
+                                                    <h1 className="w-full h-full rounded-full flex items-center justify-center font-bold text-xs text-transparent bg-clip-text bg-gradient-to-b from-text-color-black to-text-color-black/20 uppercase">{transaction.name.slice(0, 2)}</h1>
+                                                }
+                                            </div>
+                                            <Link to={'/'} className="hover:underline">{transaction.name}</Link>
                                         </td>
                                         <td class=" py-3">{transaction.OrderId}</td>
                                         <td class=" py-3">{transaction.DoneAt}</td>
