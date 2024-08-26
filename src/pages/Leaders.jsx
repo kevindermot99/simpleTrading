@@ -165,13 +165,13 @@ function Leaders() {
                             <h1 className="text-xs text-text-color-black/60 font-medium">
                                 Recent Transactions History
                             </h1>
-                            <div {...events} ref={ref} className="w-full flex cursor-grab active:cursor-grabbing items-start overflow-x-auto pb-3">
+                            <div {...events} ref={ref} className="w-full flex cursor-grab active:cursor-grabbing items-start gap-1 overflow-x-auto pb-2">
                                 {testMotivations.map((motive, index) => (
-                                    <div className="flex items-center justify-center select-none flex-col gap-3 w-fit cursor-pointer hover:bg-border-lines-light/70 pt-3 pb-2 px-2">
-                                        <div className="pointer-events-none min-w-16 min-h-16 rounded-full ring-[3px] ring-orange-300 ring-offset-2 ring-offset-white">
+                                    <div className="flex items-center justify-center select-none flex-col gap-3 w-fit p-2">
+                                        <div className="pointer-events-none min-w-16 min-h-16 rounded-full ring-[3px] ring-button-color/80 ring-offset-2 ring-offset-white">
                                             <img src={motive.pfp} alt="pfp" className="w-16 h-16 rounded-full" />
                                         </div>
-                                        <h1 className="cursor-text  text-xs text-center min-w-[70px] max-w-[70px] truncate text-text-color-black/60 font-semibold">
+                                        <h1 className=" text-xs text-center min-w-[70px] max-w-[70px] truncate text-text-color-black/60 font-semibold">
                                             {motive.name}
                                         </h1>
                                     </div>
