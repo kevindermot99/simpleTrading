@@ -70,7 +70,7 @@ function Leaders() {
                 
             </div>
             <div className="flex gap-5 w-full h-full bg-transparent mt-[-110px] px-10 text-text-color-black pb-10">
-                <div className="w-2/3 min-h-full flex flex-col gap-5">
+                <div className="w-full min-h-full flex flex-col gap-5">
                     <div className="w-full h-fit bg-white shadow-lg shadow-stone-600/10 grid gap-0 grid-cols-2 ">
                         {/* Profit */}
                         <div className="flex flex-col p-6 w-full h-fit border-r-[1px] border-b-[1px] ">
