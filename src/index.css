@@ -25,3 +25,23 @@
 .main-header {
   background: #21232a url('./assets/header-bg.jpg') repeat 0 0;
 }
+
+::-webkit-scrollbar {
+  width: 13px;
+  height: 13px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #c4c4c467;
+  border: 3px solid white;
+  border-radius: 0px;
+  cursor: default;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #c4c4c4c0;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
