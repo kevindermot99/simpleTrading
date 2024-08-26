@@ -16,7 +16,7 @@ function Navbar({ dynamic }) {
     <div
       className={`h-[65px] px-10 w-full flex items-center justify-between tracking-tight sticky top-0 z-[999] transition-all 
       ${dynamic === 'on' && (scrolled ? 'text-text-color-black bg-white shadow-lg shadow-stone-500/5' : 'text-text-color-white main-header')}
-      ${dynamic === 'off' && 'text-text-color-black bg-white shadow-lg shadow-stone-500/5'}
+      ${dynamic === 'off' && (` text-text-color-black bg-white ${scrolled && 'shadow-lg shadow-stone-500/5'}`)}
     `}
     >
       {/* Logo & Links */}
