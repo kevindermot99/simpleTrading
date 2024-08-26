@@ -50,56 +50,51 @@ function Leaders() {
         };
     }, [isDragging, startX, scrollLeft]);
 
-    const testTransactions = [
+    const testLeaderss = [
         {
+            name: "彩姬",
             pfp: "https://windybot.com/images/rabbit-anime.jpg",
-            name: "Alice Johnson",
-            OrderId: "0R932HB984",
-            DoneAt: "June 12, 2023, 11:21 PM",
-            Type: "Buy",
-            Size: "0.03",
-            pl: { status: "loss", amount: "$12" },
-            Symbol: "audusd",
+            status: "active",
+            winRate: "23%",
+            RiskToReward: "1;4",
+            Copiers: "4932",
+            followers: "239443",
         },
         {
+            name: "Hellis Jennifer",
             pfp: "https://images.generated.photos/vmb60Gy5dtfzvX6D8wAVbhdQ04vMzUJTHP_HLuhpoQA/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92Ml8w/NTQ2MTAxLmpwZw.jpg",
-            name: "Bob Smith",
-            OrderId: "1T847CZX912",
-            DoneAt: "June 13, 2023, 09:45 AM",
-            Type: "Sell",
-            Size: "0.10",
-            pl: { status: "profit", amount: "$30" },
-            Symbol: "eurusd",
+            status: "active",
+            winRate: "23%",
+            RiskToReward: "1;4",
+            Copiers: "4932",
+            followers: "239443",
         },
         {
+            name: "Alex Murphy",
             pfp: "",
-            name: "Carol Davis",
-            OrderId: "2F658DVQ731",
-            DoneAt: "June 14, 2023, 03:30 PM",
-            Type: "Buy",
-            Size: "0.05",
-            pl: { status: "profit", amount: "$322" },
-            Symbol: "gbpusd",
+            status: "active",
+            winRate: "23%",
+            RiskToReward: "1;4",
+            Copiers: "4932",
+            followers: "239443",
         },
         {
+            name: "Sophia Larson",
             pfp: "https://images.generated.photos/yz0oz48xDKxIIyh3EHddnjACyS0vSaw00o45E7nybis/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy8wNjU2/MDYyLmpwZw.jpg",
-            name: "David Wilson",
-            OrderId: "3J249LKP654",
-            DoneAt: "June 15, 2023, 07:15 PM",
-            Type: "Sell",
-            Size: "0.02",
-            pl: { status: "loss", amount: "$1090" },
-            Symbol: "usdchf",
+            status: "active",
+            winRate: "23%",
+            RiskToReward: "1;4",
+            Copiers: "4932",
+            followers: "239443",
         },
         {
+            name: "Liam Jones",
             pfp: "https://images.generated.photos/NoZffSFDtiQf_rznmkReTzZhMoz7aOi3kHi7_mziBo0/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92Ml8w/OTIzMTY0LmpwZw.jpg",
-            name: "Eve Clark",
-            OrderId: "4M860RZP375",
-            DoneAt: "June 16, 2023, 12:00 PM",
-            Type: "Buy",
-            Size: "0.07",
-            pl: { status: "profit", amount: "$690" },
-            Symbol: "usdjpy",
+            status: "active",
+            winRate: "23%",
+            RiskToReward: "1;4",
+            Copiers: "4932",
+            followers: "239443",
         },
     ];
     const testMotivations = [
@@ -225,58 +220,51 @@ function Leaders() {
                         Leaderboard
                     </h1>
                     <div className=" w-full flex-1 h-full min-h-[350px] bg-white shadow-lg shadow-stone-600/10 flex flex-col gap-2 p-6">
-                        <table class="w-full text-sm text-left table-auto">
+                        <table class="w-full text-sm text-center table-auto">
                             <thead class="text-xs text-gray-700 uppercase border-b">
                                 <tr>
-                                    <th scope="col" class=" pb-3">
+                                    <th scope="col" class=" text-left pb-3">
 
                                     </th>
-                                    <th scope="col" class=" pb-3">
+                                    <th scope="col" class=" text-left pb-3">
                                         Trader
                                     </th>
                                     <th scope="col" class=" pb-3">
-                                        Order id
+                                        Status
                                     </th>
                                     <th scope="col" class=" pb-3">
-                                        Done at
+                                        Win Rate
                                     </th>
                                     <th scope="col" class=" pb-3">
-                                        type
+                                        Risk to Reward
                                     </th>
                                     <th scope="col" class=" pb-3">
-                                        size
+                                        Copiers
                                     </th>
                                     <th scope="col" class=" pb-3">
-                                        Profit/Loss
-                                    </th>
-                                    <th scope="col" class=" pb-3">
-                                        symbol
+                                        Followers
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {testTransactions.map((transaction, index) => (
+                                {testLeaderss.map((Leaders, index) => (
                                     <tr class="even:bg-white odd:bg-border-lines-light/40 border-b text-sm text-text-color-black/70 ">
-                                        <td class=" py-3 pl-5">{index + 1}</td>
+                                        <td class=" py-3 px-2 text-center">{index + 1}</td>
                                         <td class=" py-3 font-medium text-text-color-black whitespace-nowrap tracking-tight flex items-center gap-2 ">
                                             <div className="pointer-events-none w-7 h-7 flex rounded-full bg-stone-200">
-                                                {transaction.pfp !== "" ?
-                                                    <img src={transaction.pfp} alt="pfp" className="w-full h-full rounded-full" />
+                                                {Leaders.pfp !== "" ?
+                                                    <img src={Leaders.pfp} alt="pfp" className="w-full h-full rounded-full" />
                                                     :
-                                                    <h1 className="w-full h-full rounded-full flex items-center justify-center font-bold text-xs text-transparent bg-clip-text bg-gradient-to-b from-text-color-black to-text-color-black/20 uppercase">{transaction.name.slice(0, 2)}</h1>
+                                                    <h1 className="w-full h-full rounded-full flex items-center justify-center font-bold text-xs text-transparent bg-clip-text bg-gradient-to-b from-text-color-black to-text-color-black/20 uppercase">{Leaders.name.slice(0, 2)}</h1>
                                                 }
                                             </div>
-                                            <Link to={'/'} className="hover:underline">{transaction.name}</Link>
+                                            <Link to={'/'} className="hover:underline">{Leaders.name}</Link>
                                         </td>
-                                        <td class=" py-3">{transaction.OrderId}</td>
-                                        <td class=" py-3">{transaction.DoneAt}</td>
-                                        <td class=" py-3">{transaction.Type}</td>
-                                        <td class=" py-3">{transaction.Size}</td>
-                                        <td class=" py-3">
-                                            {transaction.pl.status === 'profit' && <span className="text-green-600 font-medium">+{transaction.pl.amount}</span>}
-                                            {transaction.pl.status === 'loss' && <span className="text-red-500 font-medium">-{transaction.pl.amount}</span>}
-                                        </td>
-                                        <td class=" py-3">{transaction.Symbol}</td>
+                                        <td class=" py-3">{Leaders.status}</td>
+                                        <td class=" py-3">{Leaders.winRate}</td>
+                                        <td class=" py-3">{Leaders.RiskToReward}</td>
+                                        <td class=" py-3">{Leaders.Copiers}</td>
+                                        <td class=" py-3">{Leaders.followers}</td>
                                     </tr>
                                 ))}
 
