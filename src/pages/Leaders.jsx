@@ -163,7 +163,7 @@ function Leaders() {
                         {/* Profit */}
                         <div className="flex flex-col p-0 mt-5 w-full h-fit gap-2 ">
                             <h1 className="text-xs text-text-color-black/60 font-medium">
-                                Recent Transactions History
+                                Leaderboard Motivation
                             </h1>
                             <div {...events} ref={ref} className="w-full flex cursor-grab active:cursor-grabbing items-start gap-1 overflow-x-auto pb-2">
                                 {testMotivations.map((motive, index) => (
