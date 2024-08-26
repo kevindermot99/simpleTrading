@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Navbar from "../components/Navbar";
 import { Select, ConfigProvider } from "antd";
 import CountUp from "react-countup";
@@ -12,7 +12,13 @@ import {
     TbSpacingHorizontal,
 } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import useScrollOnDrag from 'react-scroll-ondrag';
+
+
 function Leaders() {
+    const ref = useRef();
+    const { events } = useScrollOnDrag(ref);
+
     const testTransactions = [
         {
             name: "Alice Johnson",
@@ -141,9 +147,9 @@ function Leaders() {
             pfp: "",
             storyID: "657284910",
         }
-        
+
     ];
-    
+
     return (
         <div className="bg-body-white w-full h-full min-h-svh relative">
             <Navbar dynamic="off" />
@@ -159,13 +165,13 @@ function Leaders() {
                             <h1 className="text-xs text-text-color-black/60 font-medium">
                                 Recent Transactions History
                             </h1>
-                            <div className="w-full flex items-start overflow-x-auto pb-3">
+                            <div {...events} ref={ref} className="w-full flex cursor-grab active:cursor-grabbing items-start overflow-x-auto pb-3">
                                 {testMotivations.map((motive, index) => (
-                                    <div className="flex items-center justify-center flex-col gap-3 w-fit cursor-pointer hover:bg-border-lines-light/70 pt-3 pb-2 px-2">
-                                        <div className="min-w-16 min-h-16 rounded-full ring-[3px] ring-orange-300 ring-offset-2 ring-offset-white">
+                                    <div className="flex items-center justify-center select-none flex-col gap-3 w-fit cursor-pointer hover:bg-border-lines-light/70 pt-3 pb-2 px-2">
+                                        <div className="pointer-events-none min-w-16 min-h-16 rounded-full ring-[3px] ring-orange-300 ring-offset-2 ring-offset-white">
                                             <img src={motive.pfp} alt="pfp" className="w-16 h-16 rounded-full" />
                                         </div>
-                                        <h1 className="text-xs text-center min-w-[70px] max-w-[70px] truncate text-text-color-black/60 font-semibold">
+                                        <h1 className="cursor-text  text-xs text-center min-w-[70px] max-w-[70px] truncate text-text-color-black/60 font-semibold">
                                             {motive.name}
                                         </h1>
                                     </div>
