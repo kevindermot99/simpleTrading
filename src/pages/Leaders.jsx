@@ -15,6 +15,8 @@ import { Link } from "react-router-dom";
 import { Input } from 'antd';
 import { DatePicker, Space } from 'antd';
 const { RangePicker } = DatePicker;
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 function Leaders() {
 
@@ -148,6 +150,23 @@ function Leaders() {
         },
     ];
 
+    const responsive = {
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 12,
+            slidesToSlide: 5 // optional, default to 1.
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 7,
+            slidesToSlide: 5 // optional, default to 1.
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 3,
+            slidesToSlide: 1 // optional, default to 1.
+        }
+    };
 
     return (
         <div className="bg-body-white w-full h-full min-h-svh relative">
@@ -176,25 +195,45 @@ function Leaders() {
                             <h1 className="text-xs text-text-color-black/60 font-medium">
                                 Leaderboard Motivation
                             </h1>
-                            <div className="w-full flex items-start gap-1 overflow-x-auto pb-2">
-                                {testMotivations.map((motive, index) => (
-                                    <div className="flex items-center justify-center snap-start flex-col gap-3 w-fit p-2 hover:opacity-80">
-                                        <div className="select-none pointer-events-none min-w-16 min-h-16 flex rounded-full ring-[3px] bg-stone-200 ring-button-color/40 ring-offset-2 ring-offset-white">
-                                            {motive.pfp !== "" ?
-                                                <img src={motive.pfp} alt="pfp" className="w-16 h-16 rounded-full" />
-                                                :
-                                                <h1 className="w-16 h-16 rounded-full flex items-center justify-center font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-b from-text-color-black to-text-color-black/20 uppercase">
-                                                    {motive.name.slice(0, 2)}
-                                                </h1>
-                                            }
-                                        </div>
-                                        <h1 className="text-xs text-center min-w-[70px] max-w-[70px] truncate text-text-color-black/60 font-semibold">
-                                            {motive.name}
-                                        </h1>
-                                    </div>
-                                ))}
-                            </div>
 
+                            <div className="w-full flex items-start gap-1 pb-2">
+                                <Carousel
+                                    containerClass="carousel-container"
+                                    itemClass="carousel-item"
+
+                                    swipeable={false}
+                                    draggable={false}
+                                    showDots={true}
+                                    responsive={responsive}
+                                    ssr={true} // means to render carousel on server-side.
+                                    infinite={false}
+                                    autoPlay={false}
+                                    // autoPlaySpeed={1000}
+                                    // keyBoardControl={true}
+                                    customTransition="all .3s"
+                                    transitionDuration={500}
+                                    removeArrowOnDeviceType={["tablet", "mobile"]}
+                                    //    deviceType={this.props.deviceType}
+                                    dotListClass="custom-dot-list-style"
+                                >
+                                    {testMotivations.map((motive, index) => (
+                                        <div className="flex items-center justify-center snap-start flex-col gap-3 w-fit p-2 hover:opacity-80">
+                                            <div className="select-none pointer-events-none min-w-16 min-h-16 flex rounded-full ring-[3px] bg-stone-200 ring-button-color/40 ring-offset-2 ring-offset-white">
+                                                {motive.pfp !== "" ?
+                                                    <img src={motive.pfp} alt="pfp" className="w-16 h-16 rounded-full" />
+                                                    :
+                                                    <h1 className="w-16 h-16 rounded-full flex items-center justify-center font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-b from-text-color-black to-text-color-black/20 uppercase">
+                                                        {motive.name.slice(0, 2)}
+                                                    </h1>
+                                                }
+                                            </div>
+                                            <h1 className="text-xs text-center min-w-[70px] max-w-[70px] truncate text-text-color-black/60 font-semibold">
+                                                {motive.name}
+                                            </h1>
+                                        </div>
+                                    ))}
+                                </Carousel>
+                            </div>
                         </div>
                     </div>
                     {/* <h1
