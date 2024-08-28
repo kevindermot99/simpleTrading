@@ -170,13 +170,13 @@ function Leaders() {
             </div>
             <div className="flex gap-5 w-full h-full bg-transparent mt-[-50px] px-10 text-text-color-black pb-10">
                 <div className="w-full min-h-full flex flex-col gap-5">
-                    <div className="w-full h-fit flex bg-white px-7 ">
+                    <div className="w-full h-fit flex bg-white px-7 shadow-xl shadow-stone-600/10 ">
                         {/* Profit */}
                         <div className="flex flex-col p-0 mt-5 w-full h-fit gap-2 ">
                             <h1 className="text-xs text-text-color-black/60 font-medium">
                                 Leaderboard Motivation
                             </h1>
-                            <div className="w-full flex items-start gap-1 overflow-x-auto snap-x pb-2">
+                            <div className="w-full flex items-start gap-1 overflow-x-auto pb-2">
                                 {testMotivations.map((motive, index) => (
                                     <div className="flex items-center justify-center snap-start flex-col gap-3 w-fit p-2 hover:opacity-80">
                                         <div className="select-none pointer-events-none min-w-16 min-h-16 flex rounded-full ring-[3px] bg-stone-200 ring-button-color/40 ring-offset-2 ring-offset-white">
