@@ -205,7 +205,7 @@ function Transactions() {
                                             colorPrimary: "#21232a",
                                             colorPrimaryBg: "#e8e8e8",
                                             borderRadius: 2,
-                                            colorBorder: "#00000000",
+                                            colorBorder: "#00000010",
                                             colorBgContainer: "#e5e7eb70",
                                             zIndexPopupBase: "1",
                                             zIndexBase: "1"
