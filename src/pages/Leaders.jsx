@@ -151,14 +151,26 @@ function Leaders() {
 
     return (
         <div className="bg-body-white w-full h-full min-h-svh relative">
-            <Navbar dynamic="off" />
+            <Navbar dynamic="on" />
             {/* Hero */}
-            {/* <div className="main-header min-h-[170px] px-10 pt-5 text-text-color-white tracking-tight">
+            <div className="main-header min-h-[170px] px-10 pt-5 text-text-color-white tracking-tight">
                 <h1 className=" font-medium text-xl">Leaderboard</h1>
-            </div> */}
-            <div className="flex gap-5 w-full h-full bg-transparent mt-[-110] px-10 text-text-color-black pb-10">
+                <div className="flex items-center gap-1 my-3">
+                    <button
+                        className={`text-sm px-4 py-2 font-medium hover:bg-stone-300/10 border-b-2 border-text-color-white`}
+                    >
+                        All
+                    </button>
+                    <button
+                        className={`text-sm px-4 py-2 font-medium hover:bg-stone-300/10 border-b-2 border-transparent opacity-50 hover:opacity-100`}
+                    >
+                        Following
+                    </button>
+                </div>
+            </div>
+            <div className="flex gap-5 w-full h-full bg-transparent mt-[-50px] px-10 text-text-color-black pb-10">
                 <div className="w-full min-h-full flex flex-col gap-5">
-                    <div className="w-full h-fit flex ">
+                    <div className="w-full h-fit flex bg-white px-7 ">
                         {/* Profit */}
                         <div className="flex flex-col p-0 mt-5 w-full h-fit gap-2 ">
                             <h1 className="text-xs text-text-color-black/60 font-medium">
@@ -185,12 +197,36 @@ function Leaders() {
 
                         </div>
                     </div>
-                    <h1
+                    {/* <h1
                         className="text-xs text-text-color-black/50 font-medium w-fit h-fit flex items-center gap-1"
                     >
-                        Leaderboard
-                    </h1>
+
+                    </h1> */}
                     <div className=" w-full flex-1 h-full min-h-[350px] bg-white shadow-lg shadow-stone-600/10 flex flex-col gap-2 p-6">
+                        <div className="flex items-center justify-between w-full pb-3">
+                            <h1 className="text-sm text-text-color-black/60 font-medium">
+                                Leaderboard
+                            </h1>
+                            <form className="flex items-center gap-2">
+                                <ConfigProvider
+                                    theme={{
+                                        token: {
+                                            // Seed Token
+                                            colorPrimary: "#21232a",
+                                            colorPrimaryBg: "#e8e8e8",
+                                            borderRadius: 2,
+                                            colorBorder: "#00000010",
+                                            colorBgContainer: "#e5e7eb70",
+                                            zIndexPopupBase: "1",
+                                            zIndexBase: "1"
+                                        },
+                                    }}
+                                >
+                                    <Input placeholder="Search leader" style={{ width: "230px" }} />
+                                </ConfigProvider>
+                                {/* <button type="submit" className="bg-button-color py-2 text-xs text-white font-medium px-6">Filter</button> */}
+                            </form>
+                        </div>
                         <table class="w-full text-sm text-center table-auto">
                             <thead class="text-xs text-gray-700 uppercase border-b">
                                 <tr>
