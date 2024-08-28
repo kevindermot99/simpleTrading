@@ -201,7 +201,7 @@ function Home() {
                                         colorPrimary: "#21232a",
                                         colorPrimaryBg: "#e8e8e8",
                                         borderRadius: 0,
-                                        colorBorder: "transparent",
+                                        colorBorder: "#00000010",
                                         colorBgContainer: "#e5e7eb70",
                                         colorBgTextHover: "red",
                                         zIndexPopupBase: "1",
