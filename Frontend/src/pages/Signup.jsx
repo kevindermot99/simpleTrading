@@ -6,10 +6,23 @@ import { Link, useLocation } from 'react-router-dom'
 
 function Signup() {
     const [showPassword, setShowPassword] = useState(false)
+    const [password, setPassword] = useState('');
+    const [password2, setPassword2] = useState('');
+    const [errorPassword, setErrorPassword] = useState('')
 
     const handleShowPassword = () => {
         setShowPassword(!showPassword)
     }
+
+    useEffect(() => {
+        if(password !== password2){
+            setErrorPassword("password field doesn't match!!")
+        }
+        else{
+            setErrorPassword('')
+        }
+    },[password, password2])
+
 
     return (
         <div
@@ -30,9 +43,9 @@ function Signup() {
                         <input required type="email" name='email' placeholder='E.g. johndoe@gmail.com' className="w-full h-[35px] ring-1 bg-transparent ring-border-lines-light p-4 outline-none rounded-md text-sm focus:ring-button-color/20 focus:ring-2 " id="" />
                     </label>
                     <label className='w-full'>
-                        <h1 className='mb-2 font-semibold'>Password</h1>
+                        <h1 className='mb-2 font-semibold'>Create Password</h1>
                         <div className="w-full h-fit relative">
-                            <input required type={showPassword ? 'text' : 'password'} placeholder='Enter your password' className="w-full h-[35px] ring-1 bg-transparent ring-border-lines-light p-4 outline-none rounded-md text-sm focus:ring-button-color/20 focus:ring-2 " id="" />
+                            <input required onChange={(e) => setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} placeholder='Enter your password' className="w-full h-[35px] ring-1 bg-transparent ring-border-lines-light p-4 outline-none rounded-md text-sm focus:ring-button-color/20 focus:ring-2 " id="" />
                             <div onClick={handleShowPassword} className=' absolute top-0 bottom-0 right-3 m-auto text-xl w-fit h-fit p-1 text-text-color-black/70 cursor-pointer select-none'>
                                 {showPassword ?
                                     <IoEyeOutline />
@@ -42,6 +55,14 @@ function Signup() {
                             </div>
                         </div>
                     </label>
+                    {errorPassword !== '' && <p className='text-xs text-red-600'>{errorPassword}</p>}
+                    <label className='w-full'>
+                        <h1 className='mb-2 font-semibold'>Confirm Password</h1>
+                        <div className="w-full h-fit relative">
+                            <input required onChange={(e) => setPassword2(e.target.value)} type={showPassword ? 'text' : 'password'} placeholder='Enter your password' className="w-full h-[35px] ring-1 bg-transparent ring-border-lines-light p-4 outline-none rounded-md text-sm focus:ring-button-color/20 focus:ring-2 " id="" />
+                        </div>
+                    </label>
+                    {errorPassword !== '' && <p className='text-xs text-red-600'>{errorPassword}</p>}
                     <div className='flex items-center justify-end w-full py-1'>
                         <Link to="/" className='text-main-color font-medium w-fit '>Forgot password?</Link>
                     </div>
@@ -52,7 +73,7 @@ function Signup() {
                     </label>
                     <div className='flex items-center justify-center w-full py-4 gap-1 max-sm:flex-col'>
                         <h1 className='text-text-color-black/60'>Not registered yet? </h1>
-                        <Link to="/signup" className='text-main-color font-medium w-fit flex items-center gap-1 '>Create an account <MdArrowOutward /></Link>
+                        <Link to="/login" className='text-main-color font-medium w-fit flex items-center gap-1 '>Create an account <MdArrowOutward /></Link>
                     </div>
                 </form>
             </div>
