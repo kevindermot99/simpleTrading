@@ -54,7 +54,7 @@ function Navbar({ dynamic }) {
             Leaders
           </Link>
           <Link
-            to="/"
+            to="/findAgents"
             className={`text-sm px-3 py-2 
               ${dynamic === 'on' && (
                 scrolled
@@ -69,7 +69,7 @@ function Navbar({ dynamic }) {
             Find Agents
           </Link>
           <Link
-            to="/"
+            to="/signals"
             className={`text-sm px-3 py-2 
               ${dynamic === 'on' && (
                 scrolled
@@ -84,7 +84,7 @@ function Navbar({ dynamic }) {
             Signals
           </Link>
           <Link
-            to="/"
+            to="/learn"
             className={`text-sm px-3 py-2 
               ${dynamic === 'on' && (
                 scrolled
@@ -114,7 +114,7 @@ function Navbar({ dynamic }) {
             Join Pool
           </Link>
           <Link
-            to="/"
+            to="/helpCenter"
             className={`text-sm px-3 py-2 
               ${dynamic === 'on' && (
                 scrolled
