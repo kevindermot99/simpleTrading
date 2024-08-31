@@ -99,15 +99,15 @@ function Navbar({ dynamic }) {
             Learn
           </Link>
           <Link
-            to="/"
+            to="/joinPools"
             className={`text-sm px-3 py-2 
               ${dynamic === 'on' && (
                 scrolled
-                  ? `hover:bg-stone-300/40 ${location.pathname === "/learn" ? "bg-stone-300/40" : ""}`
-                  : `hover:bg-stone-300/10 ${location.pathname === "/learn" ? "bg-stone-300/10" : ""}`
+                  ? `hover:bg-stone-300/40 ${location.pathname === "/joinPools" ? "bg-stone-300/40" : ""}`
+                  : `hover:bg-stone-300/10 ${location.pathname === "/joinPools" ? "bg-stone-300/10" : ""}`
               )}
               ${dynamic === 'off' && (
-                `hover:bg-stone-300/40 ${location.pathname === "/learn" ? "bg-stone-300/40" : ""}`
+                `hover:bg-stone-300/40 ${location.pathname === "/joinPools" ? "bg-stone-300/40" : ""}`
               )}
             `}
           >
