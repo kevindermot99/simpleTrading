@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Transactions from './pages/Transactions'
 import Leaders from './pages/Leaders'
 import Login from './pages/Login'
+import Signup from './pages/Signup'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
           <Route path={`/transactions`} element={<Transactions />} />
           <Route path={`/leaders`} element={<Leaders />} />
           <Route path={`/login`} element={<Login />} />
+          <Route path={`/signup`} element={<Signup />} />
         </Routes>
       </HashRouter>
     </>
