@@ -72,8 +72,8 @@ function Signup() {
                         </button>
                     </label>
                     <div className='flex items-center justify-center w-full py-4 gap-1 max-sm:flex-col'>
-                        <h1 className='text-text-color-black/60'>Not registered yet? </h1>
-                        <Link to="/login" className='text-main-color font-medium w-fit flex items-center gap-1 '>Create an account <MdArrowOutward /></Link>
+                        <h1 className='text-text-color-black/60'>Already have an account? </h1>
+                        <Link to="/login" className='text-main-color font-medium w-fit flex items-center gap-1 '>Login <MdArrowOutward /></Link>
                     </div>
                 </form>
             </div>
