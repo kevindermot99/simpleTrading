@@ -17,6 +17,7 @@ import { DatePicker, Space } from 'antd';
 const { RangePicker } = DatePicker;
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
 
 function Leaders() {
 
@@ -149,23 +150,66 @@ function Leaders() {
             storyID: "986712354",
         },
     ];
+    const calculateItems = (minWidth) => Math.floor(window.innerWidth / minWidth);
 
-    const responsive = {
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 12,
-            slidesToSlide: 5 // optional, default to 1.
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 7,
-            slidesToSlide: 5 // optional, default to 1.
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 3,
-            slidesToSlide: 1 // optional, default to 1.
-        }
+    const useResponsiveConfig = () => {
+        const [responsive, setResponsive] = useState({
+            desktop: {
+                breakpoint: { max: 3000, min: 1024 },
+                items: calculateItems(100),
+                slidesToSlide: 10
+            },
+            tablet: {
+                breakpoint: { max: 1024, min: 464 },
+                items: calculateItems(120),
+                slidesToSlide: 5
+            },
+            mobile: {
+                breakpoint: { max: 464, min: 0 },
+                items: calculateItems(150),
+                slidesToSlide: 1
+            }
+        });
+
+        useEffect(() => {
+            const handleResize = () => {
+                setResponsive({
+                    desktop: {
+                        breakpoint: { max: 3000, min: 1024 },
+                        items: calculateItems(100),
+                        slidesToSlide: 6
+                    },
+                    tablet: {
+                        breakpoint: { max: 1024, min: 464 },
+                        items: calculateItems(120),
+                        slidesToSlide: 5
+                    },
+                    mobile: {
+                        breakpoint: { max: 464, min: 0 },
+                        items: calculateItems(150),
+                        slidesToSlide: 1
+                    }
+                });
+            };
+
+            window.addEventListener('resize', handleResize);
+            return () => window.removeEventListener('resize', handleResize);
+        }, []);
+
+        return responsive;
+    };
+
+    const responsive = useResponsiveConfig();
+
+    // slider arrows
+    const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
+        const { carouselState: { currentSlide } } = rest;
+        return (
+            <div className="carousel-button-group absolute top-0 left-0 w-full h-20 flex items-center justify-between bg-transparent z-10">
+                <FaCircleChevronLeft className={` bg-white/0 rounded-full text-2xl ml-[-13px] text-text-color-black/80 hover:text-text-color-black cursor-pointer ${currentSlide === 0 ? 'disable' : ''}`} onClick={() => previous()} />
+                <FaCircleChevronRight className={`bg-white/0 rounded-full text-2xl mr-[-13px] text-text-color-black/80 hover:text-text-color-black cursor-pointer `} onClick={() => next()} />
+            </div>
+        );
     };
 
     return (
@@ -189,21 +233,23 @@ function Leaders() {
             </div>
             <div className="flex gap-5 w-full h-full bg-transparent mt-[-50px] px-10 text-text-color-black pb-10">
                 <div className="w-full min-h-full flex flex-col gap-5">
-                    <div className="w-full h-fit flex bg-white px-7 shadow-xl shadow-stone-600/10 ">
+                    <div className="w-full h-fit flex bg-white px-6 shadow-xl shadow-stone-600/10">
                         {/* Profit */}
-                        <div className="flex flex-col p-0 mt-5 w-full h-fit gap-2 ">
+                        <div className="flex flex-col p-0 mt-5 w-full h-fit gap-2 relative ">
                             <h1 className="text-xs text-text-color-black/60 font-medium">
                                 Leaderboard Motivation
                             </h1>
 
-                            <div className="w-full flex items-start gap-1 pb-2">
+                            <div className="w-full flex items-start gap-1 pb-2 relative">
                                 <Carousel
+                                    centerMode
+                                    centerSlidePercentage={50}
                                     containerClass="carousel-container"
                                     itemClass="carousel-item"
-
+                                    arrows={false} renderButtonGroupOutside={true} customButtonGroup={<ButtonGroup />}
                                     swipeable={false}
                                     draggable={false}
-                                    showDots={true}
+                                    showDots={false}
                                     responsive={responsive}
                                     ssr={true} // means to render carousel on server-side.
                                     infinite={false}
@@ -212,12 +258,12 @@ function Leaders() {
                                     // keyBoardControl={true}
                                     customTransition="all .3s"
                                     transitionDuration={500}
-                                    removeArrowOnDeviceType={["tablet", "mobile"]}
+                                    removeArrowOnDeviceType={["mobile"]}
                                     //    deviceType={this.props.deviceType}
                                     dotListClass="custom-dot-list-style"
                                 >
                                     {testMotivations.map((motive, index) => (
-                                        <div className="flex items-center justify-center snap-start flex-col gap-3 w-fit p-2 hover:opacity-80">
+                                        <div className="flex items-center justify-center snap-start flex-col gap-3 w-fit p-2 z-50">
                                             <div className="select-none pointer-events-none min-w-16 min-h-16 flex rounded-full ring-[3px] bg-stone-200 ring-button-color/40 ring-offset-2 ring-offset-white">
                                                 {motive.pfp !== "" ?
                                                     <img src={motive.pfp} alt="pfp" className="w-16 h-16 rounded-full" />
@@ -227,9 +273,9 @@ function Leaders() {
                                                     </h1>
                                                 }
                                             </div>
-                                            <h1 className="text-xs text-center min-w-[70px] max-w-[70px] truncate text-text-color-black/60 font-semibold">
+                                            <Link to={'/leaders'} className="text-xs text-center min-w-[70px] max-w-[70px] hover:underline truncate text-text-color-black/60 font-semibold">
                                                 {motive.name}
-                                            </h1>
+                                            </Link>
                                         </div>
                                     ))}
                                 </Carousel>
