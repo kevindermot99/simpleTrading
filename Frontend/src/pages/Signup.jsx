@@ -45,7 +45,7 @@ function Signup() {
                     <label className='w-full'>
                         <h1 className='mb-2 font-semibold'>Create Password</h1>
                         <div className="w-full h-fit relative">
-                            <input required onChange={(e) => setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} placeholder='Enter your password' className="w-full h-[35px] ring-1 bg-transparent ring-border-lines-light p-4 outline-none rounded-md text-sm focus:ring-button-color/20 focus:ring-2 " id="" />
+                            <input required onChange={(e) => setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} placeholder='Create password' className="w-full h-[35px] ring-1 bg-transparent ring-border-lines-light p-4 outline-none rounded-md text-sm focus:ring-button-color/20 focus:ring-2 " id="" />
                             <div onClick={handleShowPassword} className=' absolute top-0 bottom-0 right-3 m-auto text-xl w-fit h-fit p-1 text-text-color-black/70 cursor-pointer select-none'>
                                 {showPassword ?
                                     <IoEyeOutline />
@@ -59,14 +59,12 @@ function Signup() {
                     <label className='w-full'>
                         <h1 className='mb-2 font-semibold'>Confirm Password</h1>
                         <div className="w-full h-fit relative">
-                            <input required onChange={(e) => setPassword2(e.target.value)} type={showPassword ? 'text' : 'password'} placeholder='Enter your password' className="w-full h-[35px] ring-1 bg-transparent ring-border-lines-light p-4 outline-none rounded-md text-sm focus:ring-button-color/20 focus:ring-2 " id="" />
+                            <input required onChange={(e) => setPassword2(e.target.value)} type={showPassword ? 'text' : 'password'} placeholder='Confirm password' className="w-full h-[35px] ring-1 bg-transparent ring-border-lines-light p-4 outline-none rounded-md text-sm focus:ring-button-color/20 focus:ring-2 " id="" />
                         </div>
                     </label>
                     {errorPassword !== '' && <p className='text-xs text-red-600'>{errorPassword}</p>}
-                    <div className='flex items-center justify-end w-full py-1'>
-                        <Link to="/" className='text-main-color font-medium w-fit '>Forgot password?</Link>
-                    </div>
-                    <label className='w-full mt-1'>
+                    
+                    <label className='w-full mt-3'>
                         <button type='submit' title='Login' className={`w-full h-[35px] bg-button-color hover:bg-opacity-80 text-white rounded-md font-semibold flex items-center justify-center gap-1 transition select-none `}>
                             Login
                         </button>
