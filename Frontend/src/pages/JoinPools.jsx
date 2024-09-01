@@ -240,13 +240,14 @@ function JoinPools() {
                                     }}
                                 >
                                     <Select
-                                        defaultValue="less than $5"
+                                        defaultValue="All ranges"
                                         style={{
                                             width: "150px",
                                             boxShadow: "none",
                                         }}
                                         allowClear
                                         options={[
+                                            { value: "All ranges", label: "All ranges", },
                                             { value: "less than $5", label: "less than $5" },
                                             { value: "$5 - $20", label: "$5 - $20" },
                                             { value: "$20 - $50", label: "$20 - $50" },
