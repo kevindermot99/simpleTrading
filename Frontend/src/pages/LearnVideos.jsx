@@ -105,7 +105,7 @@ function LearnVideos() {
                         to={'/learn/meetings'}
                         className={`text-sm px-4 py-2 font-medium hover:bg-stone-300/10 border-b-2 border-transparent opacity-80 hover:opacity-100`}
                     >
-                        Mettings
+                        Meetings
                     </Link>
                 </div>
             </div>
@@ -174,7 +174,7 @@ function LearnVideos() {
                                         <div className="flex items-end justify-end flex-col mt-3 w-full">
                                             {book.price > 0 && (
                                                 <p className="text-xs text-text-color-black/70">
-                                                    50% Off
+                                                    20% Off
                                                 </p>
                                             )}
                                             <p className="text-xl text-text-color-black font-bold pb-1 flex items-center gap-2">
