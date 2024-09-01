@@ -1,16 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Navbar from "../components/Navbar";
 import { Select, ConfigProvider } from "antd";
-import CountUp from "react-countup";
-import { LuArrowDownFromLine, LuExternalLink } from "react-icons/lu";
-import { TiArrowDownThick, TiArrowUpThick } from "react-icons/ti";
-import {
-    TbCoins,
-    TbKeyframes,
-    TbLayoutAlignCenter,
-    TbMoneybag,
-    TbSpacingHorizontal,
-} from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { Input } from 'antd';
 import { DatePicker, Space } from 'antd';
