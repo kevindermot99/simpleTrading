@@ -114,7 +114,7 @@ function LearnVideos() {
                     <div className=" w-full flex-1 h-full min-h-[500px] bg-white shadow-lg shadow-stone-600/10 flex flex-col gap-2 p-6">
                         <div className="flex itec justify-between w-full">
                             <h1 className="text-sm text-text-color-black/60 font-medium">
-                                Available Books
+                                Trading Video Tutorials
                             </h1>
                             <form className="flex items-center gap-2">
                                 <ConfigProvider
@@ -131,21 +131,7 @@ function LearnVideos() {
                                         },
                                     }}
                                 >
-                                    <Select
-                                        defaultValue="All ranges"
-                                        style={{
-                                            width: "150px",
-                                            boxShadow: "none",
-                                        }}
-                                        allowClear
-                                        options={[
-                                            { value: "Recommended", label: "Recommended", },
-                                            { value: "Best Sellers", label: "Best Sellers" },
-                                            { value: "Essential Reads", label: "Essential Reads" }
-                                        ]}
-                                        placeholder="Currency"
-                                    />
-                                    <Input placeholder="Search Book name" style={{ width: "230px" }} />
+                                    <Input placeholder="Search " style={{ width: "230px" }} />
                                 </ConfigProvider>
                             </form>
                         </div>
