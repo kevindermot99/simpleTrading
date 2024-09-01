@@ -244,13 +244,8 @@ function Home() {
                                 decimal="."
                                 prefix="$ "
                                 //   suffix=" left"
-                                onStart={() => {
-                                    if (countUpRef.current) {
-                                        countUpRef.current.start();
-                                    }
-                                }}
                             >
-                                {({ countUpRef, start }) => (
+                                {({ countUpRef }) => (
                                     <div className="">
                                         <span
                                             className="py-2 text-3xl font-extrabold"
@@ -320,7 +315,7 @@ function Home() {
                                     prefix="$ "
                                 //   suffix=" left"
                                 >
-                                    {({ countUpRef, start }) => (
+                                    {({ countUpRef }) => (
                                         <div className="">
                                             <span
                                                 className=" text-2xl font-extrabold"
@@ -357,7 +352,7 @@ function Home() {
                                     prefix="$ "
                                 //   suffix=" left"
                                 >
-                                    {({ countUpRef, start }) => (
+                                    {({ countUpRef }) => (
                                         <div className="">
                                             <span
                                                 className=" text-2xl font-extrabold"
@@ -394,7 +389,7 @@ function Home() {
                                     prefix="$ "
                                 //   suffix=" left"
                                 >
-                                    {({ countUpRef, start }) => (
+                                    {({ countUpRef }) => (
                                         <div className="">
                                             <span
                                                 className=" text-2xl font-extrabold"
@@ -431,7 +426,7 @@ function Home() {
                                     // prefix="$ "
                                     suffix=" %"
                                 >
-                                    {({ countUpRef, start }) => (
+                                    {({ countUpRef }) => (
                                         <div className="">
                                             <span
                                                 className=" text-2xl font-extrabold"
