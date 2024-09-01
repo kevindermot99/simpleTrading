@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import Navbar from "../components/Navbar";
 import { Select, ConfigProvider } from "antd";
-import CountUp from "react-countup";
+import { CountUp } from 'use-count-up'
 import { LuArrowDownFromLine, LuExternalLink } from "react-icons/lu";
 import { TiArrowDownThick, TiArrowUpThick } from "react-icons/ti";
 import {
@@ -165,7 +165,6 @@ function Home() {
             Symbol: "usdjpy",
         },
     ];
-    const countUpRef = useRef(null);
     return (
         <div className="bg-body-white w-full h-full min-h-svh relative">
             <Navbar dynamic="on" />
@@ -233,27 +232,21 @@ function Home() {
                                 />
                             </ConfigProvider>
                         </div>
-                        <div className="w-full py-3">
+                        <div className="w-full pt-5 pb-2 text-3xl font-extrabold">
                             {/* Balance */}
-                            <CountUp
-                                start={0}
-                                end={320.2}
-                                duration={0.9}
-                                separator=","
-                                decimals={2}
-                                decimal="."
-                                prefix="$ "
-                                //   suffix=" left"
-                            >
-                                {({ countUpRef }) => (
-                                    <div className="">
-                                        <span
-                                            className="py-2 text-3xl font-extrabold"
-                                            ref={countUpRef}
-                                        />
-                                    </div>
-                                )}
-                            </CountUp>
+                            <h1 className="flex items-center justify-start gap-1">
+                                <span>$</span>
+                                <span>
+                                    <CountUp
+                                        isCounting
+                                        end={1320.32048248}
+                                        duration={0.9}
+                                        decimalSeparat="."
+                                        thousandsSeparator=","
+                                        decimalPlaces={2}
+                                    />
+                                </span>
+                            </h1>
                             <p className="text-xs pt-1 text-text-color-black/60 font-medium ">
                                 <span className="text-green-600">129%</span> increase for the
                                 last 7 days
@@ -305,7 +298,7 @@ function Home() {
                             </div>
                             <div className="w-full pt-0">
                                 {/* Profit */}
-                                <CountUp
+                                {/* <CountUp
                                     start={0}
                                     end={49.5}
                                     duration={0.9}
@@ -313,7 +306,6 @@ function Home() {
                                     decimals={2}
                                     decimal="."
                                     prefix="$ "
-                                //   suffix=" left"
                                 >
                                     {({ countUpRef }) => (
                                         <div className="">
@@ -323,7 +315,7 @@ function Home() {
                                             />
                                         </div>
                                     )}
-                                </CountUp>
+                                </CountUp> */}
                                 <p className="text-xs pt-2 text-text-color-black/60 font-medium ">
                                     <span className="text-red-500">0.9%</span> descrease for the
                                     last 7 days
@@ -342,7 +334,7 @@ function Home() {
                             </div>
                             <div className="w-full pt-0">
                                 {/* Margin */}
-                                <CountUp
+                                {/* <CountUp
                                     start={0}
                                     end={92405}
                                     duration={0.9}
@@ -350,7 +342,6 @@ function Home() {
                                     decimals={2}
                                     decimal="."
                                     prefix="$ "
-                                //   suffix=" left"
                                 >
                                     {({ countUpRef }) => (
                                         <div className="">
@@ -360,7 +351,7 @@ function Home() {
                                             />
                                         </div>
                                     )}
-                                </CountUp>
+                                </CountUp> */}
                                 <p className="text-xs pt-2 text-text-color-black/60 font-medium ">
                                     <span className="text-green-600">32%</span> increase for the
                                     last 7 days
@@ -379,7 +370,7 @@ function Home() {
                             </div>
                             <div className="w-full pt-0">
                                 {/* Free Margin */}
-                                <CountUp
+                                {/* <CountUp
                                     start={0}
                                     end={32218.2}
                                     duration={0.9}
@@ -387,7 +378,6 @@ function Home() {
                                     decimals={2}
                                     decimal="."
                                     prefix="$ "
-                                //   suffix=" left"
                                 >
                                     {({ countUpRef }) => (
                                         <div className="">
@@ -397,7 +387,7 @@ function Home() {
                                             />
                                         </div>
                                     )}
-                                </CountUp>
+                                </CountUp> */}
                                 <p className="text-xs pt-2 text-text-color-black/60 font-medium ">
                                     <span className="text-green-600">2%</span> increase for the
                                     last 7 days
@@ -416,14 +406,13 @@ function Home() {
                             </div>
                             <div className="w-full pt-0">
                                 {/* Balance */}
-                                <CountUp
+                                {/* <CountUp
                                     start={0}
                                     end={405}
                                     duration={0.9}
                                     separator=","
-                                    // decimals={2}
+                                    decimals={2}
                                     decimal="."
-                                    // prefix="$ "
                                     suffix=" %"
                                 >
                                     {({ countUpRef }) => (
@@ -434,7 +423,7 @@ function Home() {
                                             />
                                         </div>
                                     )}
-                                </CountUp>
+                                </CountUp> */}
                                 <p className="text-xs pt-2 text-text-color-black/60 font-medium ">
                                     <span className="text-green-600">73%</span> increase for the
                                     last 7 days
@@ -461,40 +450,40 @@ function Home() {
                                 View all
                             </Link>
                         </div>
-                        <table class="w-full text-sm text-center table-auto">
-                            <thead class="text-xs text-gray-700 uppercase border-b">
+                        <table className="w-full text-sm text-center table-auto">
+                            <thead className="text-xs text-gray-700 uppercase border-b">
                                 <tr>
-                                    <th scope="col" class=" text-left py-3">
+                                    <th scope="col" className=" text-left py-3">
 
                                     </th>
-                                    <th scope="col" class=" text-left py-3">
+                                    <th scope="col" className=" text-left py-3">
                                         Trader name
                                     </th>
-                                    <th scope="col" class=" py-3">
+                                    <th scope="col" className=" py-3">
                                         Order id
                                     </th>
-                                    <th scope="col" class=" py-3">
+                                    <th scope="col" className=" py-3">
                                         Done at
                                     </th>
-                                    <th scope="col" class=" py-3">
+                                    <th scope="col" className=" py-3">
                                         type
                                     </th>
-                                    <th scope="col" class=" py-3">
+                                    <th scope="col" className=" py-3">
                                         size
                                     </th>
-                                    <th scope="col" class=" py-3">
+                                    <th scope="col" className=" py-3">
                                         Profit/Loss
                                     </th>
-                                    <th scope="col" class=" py-3">
+                                    <th scope="col" className=" py-3">
                                         symbol
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {testTransactions.slice(0, 5).map((transaction, index) => (
-                                    <tr class="even:bg-white odd:bg-border-lines-light/40 border-b text-sm text-text-color-black/70 ">
-                                        <td class=" py-3 px-2 text-center">{testTransactions.length - index}</td>
-                                        <td class=" py-3 text-left font-medium text-text-color-black whitespace-nowrap tracking-tight flex items-center gap-2 ">
+                                    <tr key={index} className="even:bg-white odd:bg-border-lines-light/40 border-b text-sm text-text-color-black/70 ">
+                                        <td className=" py-3 px-2 text-center">{testTransactions.length - index}</td>
+                                        <td className=" py-3 text-left font-medium text-text-color-black whitespace-nowrap tracking-tight flex items-center gap-2 ">
                                             <div className="pointer-events-none w-7 h-7 flex rounded-full bg-stone-200">
                                                 {transaction.pfp !== "" ?
                                                     <img src={transaction.pfp} alt="pfp" className="w-full h-full rounded-full" />
@@ -504,15 +493,15 @@ function Home() {
                                             </div>
                                             <Link to={'/'} className="hover:underline">{transaction.name}</Link>
                                         </td>
-                                        <td class=" py-3">{transaction.OrderId}</td>
-                                        <td class=" py-3">{transaction.DoneAt}</td>
-                                        <td class=" py-3">{transaction.Type}</td>
-                                        <td class=" py-3">{transaction.Size}</td>
-                                        <td class=" py-3">
+                                        <td className=" py-3">{transaction.OrderId}</td>
+                                        <td className=" py-3">{transaction.DoneAt}</td>
+                                        <td className=" py-3">{transaction.Type}</td>
+                                        <td className=" py-3">{transaction.Size}</td>
+                                        <td className=" py-3">
                                             {transaction.pl.status === 'profit' && <span className="text-green-600 font-medium">+{transaction.pl.amount}</span>}
                                             {transaction.pl.status === 'loss' && <span className="text-red-500 font-medium">-{transaction.pl.amount}</span>}
                                         </td>
-                                        <td class=" py-3">{transaction.Symbol}</td>
+                                        <td className=" py-3">{transaction.Symbol}</td>
                                     </tr>
                                 ))}
 
