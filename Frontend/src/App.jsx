@@ -10,6 +10,8 @@ import HelpCenter from './pages/HelpCenter'
 import FindAgents from './pages/FindAgents'
 import Signals from './pages/SIgnals'
 import Learn from './pages/Learn'
+import LearnVideos from './pages/LearnVideos'
+import LearnMeetings from './pages/LearnMeetings'
 
 function App() {
 
@@ -22,6 +24,8 @@ function App() {
           <Route path={`/leaders`} element={<Leaders />} />
           <Route path={`/joinPools`} element={<JoinPools />} />
           <Route path={`/learn`} element={<Learn />} />
+          <Route path={`/learn/videos`} element={<LearnVideos />} />
+          <Route path={`/learn/meetings`} element={<LearnMeetings />} />
           <Route path={`/signals`} element={<Signals />} />
           <Route path={`/helpCenter`} element={<HelpCenter />} />
           <Route path={`/findAgents`} element={<FindAgents />} />
