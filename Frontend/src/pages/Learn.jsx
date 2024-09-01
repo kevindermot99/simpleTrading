@@ -95,16 +95,18 @@ function Learn() {
                     >
                         Books
                     </button>
-                    <button
+                    <Link 
+                        to={'/learn/videos'}
                         className={`text-sm px-4 py-2 font-medium hover:bg-stone-300/10 border-b-2 border-transparent opacity-80 hover:opacity-100`}
                     >
                         Videos
-                    </button>
-                    <button
+                    </Link>
+                    <Link
+                        to={'/learn/meetings'}
                         className={`text-sm px-4 py-2 font-medium hover:bg-stone-300/10 border-b-2 border-transparent opacity-80 hover:opacity-100`}
                     >
                         Mettings
-                    </button>
+                    </Link>
                 </div>
             </div>
             <div className="flex gap-5 w-full h-full bg-transparent mt-[-50px] px-10 text-text-color-black pb-10">
@@ -147,7 +149,7 @@ function Learn() {
                                 </ConfigProvider>
                             </form>
                         </div>
-                        <div className="w-full grid max-sm:grid-cols-1 max-md:grid-cols-2 max-xl:grid-cols-2 max-2xl:grid-cols-3 grid-cols-4 gap-4 mt-5">
+                        <div className="w-full grid max-sm:grid-cols-1 max-md:grid-cols-2 max-xl:grid-cols-2 max-2xl:grid-cols-3 grid-cols-4 gap-4 mt-3">
                             {Books.map((book, index) => (
                                 <div key={index} className="w-full bg-stone-50 ring-1 ring-stone-200 p-4 gap-3 flex items-start justify-between">
                                     <div className="w-[100px] min-w-[100px] h-fit shadow-lg">
