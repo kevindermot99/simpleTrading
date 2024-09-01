@@ -3,6 +3,8 @@ import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import { ConfigProvider, Input, Select } from 'antd';
 import { DatePicker, Space } from 'antd';
+import { IoCheckmark } from "react-icons/io5";
+import { BsCart4 } from "react-icons/bs";
 const { RangePicker } = DatePicker;
 
 function Learn() {
@@ -71,7 +73,40 @@ function Learn() {
                                 </ConfigProvider>
                             </form>
                         </div>
-                        <div className=""></div>
+                        <div className="w-full grid grid-cols-3">
+                            <div className="w-full bg-stone-50 p-4 gap-3 flex">
+                                <div className="w-[100px] min-w-[100px] h-fit shadow-lg">
+                                    <img src="https://m.media-amazon.com/images/I/61hm8klrpaL._AC_UF894,1000_QL80_.jpg" className="w-full h-full object-cover" />
+                                </div>
+                                <div className="flex flex-col gap-1">
+                                    <h1 className="line-clamp-2 font-semibold tracking-tight leading-5">The Trading Book: A Complete Solution to Mastering Technical Systems and Trading Psychology</h1>
+                                    <p className="text-xs text-text-color-black/70">Book by Anne-Marie Baiynd</p>
+                                    <p className="text-xs text-text-color-black/70 mt-3">You will Learn:</p>
+                                    <p className="text-xs text-text-color-black flex gap-1">
+                                        <IoCheckmark className="text-lg" />
+                                        Value Gaps
+                                    </p>
+                                    <p className="text-xs text-text-color-black flex gap-1">
+                                        <IoCheckmark className="text-lg" />
+                                        Supply And Demand
+                                    </p>
+                                    <div className="flex items-end justify-end flex-col mt-3">
+                                        <p className="text-xs text-text-color-black/70">
+                                            423 Purchases
+                                        </p>
+                                        <p className="text-xl text-text-color-black font-bold py-1">
+                                            $23
+                                        </p>
+                                        <button
+                                            className={`w-full mt-1 max-w-[120px] text-sm px-4 py-2 text-text-color-white font-semibold tracking-tight bg-button-color hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-1`}
+                                        >
+                                            <BsCart4 className="text-xl pb-1" />
+                                            Purchase
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
