@@ -225,7 +225,7 @@ function Leaders() {
                         All
                     </button>
                     <button
-                        className={`text-sm px-4 py-2 font-medium hover:bg-stone-300/10 border-b-2 border-transparent opacity-50 hover:opacity-100`}
+                        className={`text-sm px-4 py-2 font-medium hover:bg-stone-300/10 border-b-2 border-transparent opacity-100 hover:opacity-100`}
                     >
                         Following
                     </button>
