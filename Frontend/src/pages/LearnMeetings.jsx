@@ -116,7 +116,7 @@ function LearnMeetings() {
                     <div className=" w-full flex-1 h-full min-h-[500px] bg-white shadow-lg shadow-stone-600/10 flex flex-col gap-2 p-6">
                         <div className="flex itec justify-between w-full">
                             <h1 className="text-sm text-text-color-black/60 font-medium">
-                                Available Books
+                                Planned Trading Discussions
                             </h1>
                             <form className="flex items-center gap-2">
                                 <ConfigProvider
@@ -171,7 +171,7 @@ function LearnMeetings() {
                                             )}
                                             <p className="text-xl text-text-color-black font-bold pb-1 flex items-center gap-2">
                                                 {meeting.price > 0 && (
-                                                    <s className="text-text-color-black/50 text-base">${(meeting.price * 0.2).toFixed(2)}</s>
+                                                    <s className="text-text-color-black/50 text-base">${(meeting.price + meeting.price * 0.2).toFixed(2)}</s>
                                                 )}
                                                 {meeting.price > 0 ? (
                                                     <span>${meeting.price}</span>
@@ -183,7 +183,7 @@ function LearnMeetings() {
                                                 className={`w-full mt-1 max-w-[150px] text-sm px-4 py-2 text-text-color-white font-semibold tracking-tight bg-button-color hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-2`}
                                             >
                                                 <LuCalendarClock className="text-base" />
-                                                Book a seat
+                                                Reserve Seat
                                             </button>
                                         </div>
                                     </div>
