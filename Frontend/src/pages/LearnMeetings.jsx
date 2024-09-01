@@ -12,66 +12,77 @@ const { RangePicker } = DatePicker;
 function LearnMeetings() {
     const Meetings = [
         {
-            name: "The Trading Book: A Complete Solution to Mastering Technical Systems and Trading Psychology",
-            by: "Anne-Marie Baiynd",
+            name: "Mastering Forex Trading Strategies",
+            with: "Anne-Marie Baiynd",
+            on: "20-09-2024, 20:30 AM EAT",
             youWillLearn: ["Value Gaps", "Supply And Demand"],
-            price: 23,
-        },
-        {
-            name: "Technical Analysis of the Financial Markets",
-            by: "John J. Murphy",
-            youWillLearn: ["Charting Techniques", "Trend Analysis", "Indicators and Oscillators"],
-            price: 35,
-        },
-        {
-            name: "Market Wizards: Interviews with Top Traders",
-            by: "Jack D. Schwager",
-            youWillLearn: ["Trading Strategies", "Trader Psychology", "Risk Management"],
-            price: 20,
-        },
-        {
-            name: "The Little Book of Currency Trading",
-            by: "Kathy Lien",
-            youWillLearn: ["Forex Fundamentals", "Currency Pair Analysis", "Risk Control"],
-            price: 18,
-        },
-        {
-            name: "A Beginner's Guide to Forex Trading",
-            by: "Matthew Driver",
-            youWillLearn: ["Forex Basics", "Trading Platforms", "Common Mistakes to Avoid"],
-            price: 15,
-        },
-        {
-            name: "The Complete TurtleTrader: How 23 Novice Investors Became Overnight Millionaires",
-            by: "Michael W. Covel",
-            youWillLearn: ["Turtle Trading Rules", "Risk Management", "Trader Mindset"],
             price: 0,
         },
         {
-            name: "The New Trading for a Living",
-            by: "Dr. Alexander Elder",
-            youWillLearn: ["Mindset for Success", "Technical Analysis", "Money Management"],
+            name: "Advanced Technical Analysis in Forex",
+            with: "John J. Murphy",
+            on: "25-09-2024, 18:00 PM EAT",
+            youWillLearn: ["Chart Patterns", "Indicators and Oscillators"],
             price: 30,
         },
         {
-            name: "Day Trading and Swing Trading the Currency Market",
-            by: "Kathy Lien",
-            youWillLearn: ["Day Trading Strategies", "Swing Trading Tactics", "Economic Indicators"],
-            price: 28,
+            name: "Psychology of Successful Forex Traders",
+            with: "Dr. Alexander Elder",
+            on: "28-09-2024, 16:00 PM EAT",
+            youWillLearn: ["Trader Psychology", "Risk Management"],
+            price: 27,
         },
         {
-            name: "Currency Trading for Dummies",
-            by: "Brian Dolan",
-            youWillLearn: ["Forex Market Basics", "Trading Strategies", "Technical and Fundamental Analysis"],
+            name: "Day Trading Techniques for Forex",
+            with: "Kathy Lien",
+            on: "30-09-2024, 10:00 AM EAT",
+            youWillLearn: ["Day Trading Strategies", "Economic Indicators"],
+            price: 25,
+        },
+        {
+            name: "Forex Market Fundamentals",
+            with: "Brian Dolan",
+            on: "03-10-2024, 14:00 PM EAT",
+            youWillLearn: ["Market Basics", "Currency Pair Analysis"],
             price: 22,
         },
         {
-            name: "The Disciplined Trader: Developing Winning Attitudes",
-            by: "Mark Douglas",
-            youWillLearn: ["Trader Psychology", "Discipline Techniques", "Emotional Control"],
-            price: 27,
+            name: "Swing Trading in Forex Markets",
+            with: "Kathy Lien",
+            on: "05-10-2024, 11:00 AM EAT",
+            youWillLearn: ["Swing Trading Tactics", "Risk Control"],
+            price: 0,
         },
-    ]
+        {
+            name: "Developing a Winning Forex Mindset",
+            with: "Mark Douglas",
+            on: "08-10-2024, 17:00 PM EAT",
+            youWillLearn: ["Discipline Techniques", "Emotional Control"],
+            price: 28,
+        },
+        {
+            name: "Forex Trading for Beginners",
+            with: "Matthew Driver",
+            on: "10-10-2024, 09:30 AM EAT",
+            youWillLearn: ["Forex Basics", "Trading Platforms"],
+            price: 20,
+        },
+        {
+            name: "Turtle Trading Principles in Forex",
+            with: "Michael W. Covel",
+            on: "15-10-2024, 19:00 PM EAT",
+            youWillLearn: ["Turtle Trading Rules", "Risk Management"],
+            price: 26,
+        },
+        {
+            name: "Risk Management in Forex Trading",
+            with: "Dr. Alexander Elder",
+            on: "18-10-2024, 13:00 PM EAT",
+            youWillLearn: ["Risk Control Techniques", "Money Management"],
+            price: 0,
+        }
+    ];
+
 
     return (
         <div className="bg-body-white w-full h-full min-h-svh relative">
@@ -122,21 +133,7 @@ function LearnMeetings() {
                                         },
                                     }}
                                 >
-                                    <Select
-                                        defaultValue="All ranges"
-                                        style={{
-                                            width: "150px",
-                                            boxShadow: "none",
-                                        }}
-                                        allowClear
-                                        options={[
-                                            { value: "Recommended", label: "Recommended", },
-                                            { value: "Best Sellers", label: "Best Sellers" },
-                                            { value: "Essential Reads", label: "Essential Reads" }
-                                        ]}
-                                        placeholder="Currency"
-                                    />
-                                    <Input placeholder="Search Book name" style={{ width: "230px" }} />
+                                    <Input placeholder="Keyword " style={{ width: "230px" }} />
                                 </ConfigProvider>
                             </form>
                         </div>
@@ -148,10 +145,14 @@ function LearnMeetings() {
                                     </div>
                                     <div className="flex flex-col items-start justify-between gap-1 h-full w-full">
                                         <div className="flex flex-col items-start justify-start gap-1">
-                                            <h1 className="break-words font-semibold tracking-tight leading-5 whitespace-normal break-all">
+                                            <h1 className="break-words font-semibold tracking-tight leading-5 whitespace-normal max-md:break-all">
                                                 {meeting.name}
                                             </h1>
-                                            <p className="text-xs text-text-color-black/70">Meeting with {meeting.by}</p>
+                                            <p className="text-xs text-text-color-black/70 flex items-center gap-1">
+                                                Meeting with
+                                                <Link to={"/"} className="font-bold hover:underline">{meeting.with}</Link>
+                                            </p>
+                                            <p className="text-xs text-text-color-black/70">on {meeting.on}</p>
                                             <p className="text-xs text-text-color-black/70 mt-3">You will Learn:</p>
                                             <div className="felx items-start justify-start flex-col gap-1">
                                                 {meeting.youWillLearn.map((item, index) => (
