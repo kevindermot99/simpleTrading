@@ -6,7 +6,6 @@ import { DatePicker, Space } from 'antd';
 import { IoIosStar } from "react-icons/io";
 import { TbArrowsJoin2 } from "react-icons/tb";
 const { RangePicker } = DatePicker;
-
 function JoinPools() {
     const Pools = [
         {
@@ -25,8 +24,151 @@ function JoinPools() {
                 name: "John Doe",
             },
         },
-    ]
-
+        {
+            id: "0989564",
+            avatar: "",
+            name: "Global FX Fund",
+            rate: 4.2,
+            minimumEquity: "$5",
+            size: "$30",
+            target: "$300",
+            withdraws: "Weekly",
+            assetsTraded: "Commodities",
+            amountInvested: "$25",
+            administrator: {
+                id: "A9BX8375RGWPEBJK4R5444",
+                name: "Jane Smith",
+            },
+        },
+        {
+            id: "0989565",
+            avatar: "",
+            name: "Emerging Markets Pool",
+            rate: 4.7,
+            minimumEquity: "$10",
+            size: "$50",
+            target: "$500",
+            withdraws: "Monthly",
+            assetsTraded: "Stocks",
+            amountInvested: "$45",
+            administrator: {
+                id: "C9CY8376RGVPEBJK5R6544",
+                name: "Michael Brown",
+            },
+        },
+        {
+            id: "0989566",
+            avatar: "",
+            name: "Crypto Opportunity Fund",
+            rate: 3.9,
+            minimumEquity: "$15",
+            size: "$100",
+            target: "$1000",
+            withdraws: "Every 24 hours",
+            assetsTraded: "Cryptocurrencies",
+            amountInvested: "$80",
+            administrator: {
+                id: "D9DZ8377RGVPEBJK6R7644",
+                name: "Emily White",
+            },
+        },
+        {
+            id: "0989567",
+            avatar: "",
+            name: "Tech Growth Pool",
+            rate: 4.5,
+            minimumEquity: "$20",
+            size: "$200",
+            target: "$1500",
+            withdraws: "Weekly",
+            assetsTraded: "Tech Stocks",
+            amountInvested: "$150",
+            administrator: {
+                id: "E9EA8378RGVPEBJK7R8744",
+                name: "Chris Green",
+            },
+        },
+        {
+            id: "0989568",
+            avatar: "",
+            name: "High Yield Bond Pool",
+            rate: 4.0,
+            minimumEquity: "$30",
+            size: "$300",
+            target: "$2000",
+            withdraws: "Monthly",
+            assetsTraded: "Bonds",
+            amountInvested: "$250",
+            administrator: {
+                id: "F9FB8379RGVPEBJK8R9844",
+                name: "Patricia Blue",
+            },
+        },
+        {
+            id: "0989569",
+            avatar: "",
+            name: "Real Estate Income Pool",
+            rate: 4.6,
+            minimumEquity: "$50",
+            size: "$500",
+            target: "$2500",
+            withdraws: "Quarterly",
+            assetsTraded: "Real Estate",
+            amountInvested: "$400",
+            administrator: {
+                id: "G9GC8380RGVPEBJK9R0944",
+                name: "David Yellow",
+            },
+        },
+        {
+            id: "0989570",
+            avatar: "",
+            name: "Diversified Income Fund",
+            rate: 4.3,
+            minimumEquity: "$100",
+            size: "$1000",
+            target: "$5000",
+            withdraws: "Monthly",
+            assetsTraded: "Multiple Assets",
+            amountInvested: "$800",
+            administrator: {
+                id: "H9HD8381RGVPEBJK0R1044",
+                name: "Laura Purple",
+            },
+        },
+        {
+            id: "0989571",
+            avatar: "",
+            name: "Global Dividend Pool",
+            rate: 4.1,
+            minimumEquity: "$150",
+            size: "$1500",
+            target: "$6000",
+            withdraws: "Every 24 hours",
+            assetsTraded: "Dividend Stocks",
+            amountInvested: "$1200",
+            administrator: {
+                id: "I9IE8382RGVPEBJK1R2144",
+                name: "Kevin Orange",
+            },
+        },
+        {
+            id: "0989572",
+            avatar: "",
+            name: "Emerging Tech Fund",
+            rate: 4.8,
+            minimumEquity: "$200",
+            size: "$2000",
+            target: "$10000",
+            withdraws: "Weekly",
+            assetsTraded: "Tech Innovations",
+            amountInvested: "$1600",
+            administrator: {
+                id: "J9JF8383RGVPEBJK2R3244",
+                name: "Sophia Red",
+            },
+        },
+    ];
     return (
         <div className="bg-body-white w-full h-full min-h-svh relative">
             <Navbar dynamic="on" />
@@ -84,7 +226,7 @@ function JoinPools() {
                                 </ConfigProvider>
                             </form>
                         </div>
-                        <div className="grid grid-cols-4 mt-3">
+                        <div className="grid grid-cols-4 gap-4 mt-3">
                             {/* Pool */}
                             {Pools.map((pool, index) => (
                                 <div className="w-full h-fit bg-stone-100/50 ring-1 ring-stone-200 flex flex-col items-center justify-start p-3">
