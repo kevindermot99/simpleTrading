@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Navbar from "../components/Navbar";
 import { Select, ConfigProvider } from "antd";
 import CountUp from "react-countup";
@@ -165,6 +165,7 @@ function Home() {
             Symbol: "usdjpy",
         },
     ];
+    const countUpRef = useRef(null);
     return (
         <div className="bg-body-white w-full h-full min-h-svh relative">
             <Navbar dynamic="on" />
@@ -242,7 +243,12 @@ function Home() {
                                 decimals={2}
                                 decimal="."
                                 prefix="$ "
-                            //   suffix=" left"
+                                //   suffix=" left"
+                                onStart={() => {
+                                    if (countUpRef.current) {
+                                        countUpRef.current.start();
+                                    }
+                                }}
                             >
                                 {({ countUpRef, start }) => (
                                     <div className="">
