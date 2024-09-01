@@ -179,7 +179,7 @@ function Learn() {
                                             )}
                                             <p className="text-xl text-text-color-black font-bold pb-1 flex items-center gap-2">
                                                 {book.price > 0 && (
-                                                    <s className="text-text-color-black/50 text-base">${(book.price * 0.2).toFixed(2)}</s>
+                                                    <s className="text-text-color-black/50 text-base">${(book.price + book.price * 0.2).toFixed(2)}</s>
                                                 )}
                                                 {book.price > 0 ? (
                                                     <span>${book.price}</span>
