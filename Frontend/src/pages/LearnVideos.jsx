@@ -157,7 +157,7 @@ function LearnVideos() {
                                     </div>
                                     <div className="flex flex-col items-start justify-between gap-1 h-full w-full">
                                         <div className="flex flex-col items-start justify-start gap-1">
-                                            <h1 className="break-words font-semibold tracking-tight leading-5 whitespace-normal break-all">
+                                            <h1 className="break-words font-semibold tracking-tight leading-5 whitespace-normal max-md:">
                                                 {book.name}
                                             </h1>
                                             <p className="text-xs text-text-color-black/70">Book By {book.by}</p>
