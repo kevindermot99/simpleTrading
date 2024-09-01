@@ -1,13 +1,32 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
-import { Input } from 'antd';
+import { ConfigProvider, Input, Select } from 'antd';
 import { DatePicker, Space } from 'antd';
 import { IoIosStar } from "react-icons/io";
 import { TbArrowsJoin2 } from "react-icons/tb";
 const { RangePicker } = DatePicker;
 
 function JoinPools() {
+    const Pools = [
+        {
+            id: "0989563",
+            avatar: "https://img.freepik.com/premium-vector/letter-logo-with-black-background_853558-1836.jpg",
+            name: "Forex Alpha Pool",
+            rate: 3.4,
+            minimumEquity: "$2",
+            size: "$20",
+            target: "$200",
+            withdraws: "Every 24 hours",
+            assetsTraded: "Currencies",
+            amountInvested: "$16",
+            administrator: {
+                id: "O9BV9374RGVPEBJK3R4344",
+                name: "John Doe",
+            },
+        },
+    ]
+
     return (
         <div className="bg-body-white w-full h-full min-h-svh relative">
             <Navbar dynamic="on" />
@@ -26,59 +45,109 @@ function JoinPools() {
             <div className="flex gap-5 w-full h-full bg-transparent mt-[-50px] px-10 text-text-color-black pb-10">
                 <div className="w-full min-h-full flex flex-col gap-5">
                     <div className=" w-full flex-1 h-full min-h-[500px] bg-white shadow-lg shadow-stone-600/10 flex flex-col gap-2 p-6">
-                        <h1 className="text-sm text-text-color-black/60 font-medium">
-                            Available Pools
-                        </h1>
-                        <div className="grid grid-cols-3 mt-3">
-                            {/* Pool */}
-                            <div className="w-full h-fit bg-stone-100 flex flex-col items-center justify-start p-3">
-                                <div className="w-12 h-12 rounded-full mt-2">
-                                    <img
-                                        src="https://img.freepik.com/premium-vector/letter-logo-with-black-background_853558-1836.jpg"
-                                        className="w-full h-full rounded-full object-cover object-center"
+                        <div className="flex itec justify-between w-full">
+                            <h1 className="text-sm text-text-color-black/60 font-medium">
+                                Available Pools
+                            </h1>
+                            <form className="flex items-center gap-2">
+                                <ConfigProvider
+                                    theme={{
+                                        token: {
+                                            // Seed Token
+                                            colorPrimary: "#21232a",
+                                            colorPrimaryBg: "#e8e8e8",
+                                            borderRadius: 2,
+                                            colorBorder: "#00000010",
+                                            colorBgContainer: "#e5e7eb70",
+                                            zIndexPopupBase: "1",
+                                            zIndexBase: "1"
+                                        },
+                                    }}
+                                >
+                                    <Select
+                                        defaultValue="less than $5"
+                                        style={{
+                                            width: "150px",
+                                            boxShadow: "none",
+                                        }}
+                                        allowClear
+                                        options={[
+                                            { value: "less than $5", label: "less than $5" },
+                                            { value: "$5 - $20", label: "$5 - $20" },
+                                            { value: "$20 - $50", label: "$20 - $50" },
+                                            { value: "$50 - $100", label: "$50 - $100" },
+                                            { value: "over $100", label: "over $100" },
+                                        ]}
+                                        placeholder="Currency"
                                     />
-                                </div>
-                                <h1 className="text-base font-medium py-2">Forex Alpha Pool</h1>
-                                <div className="flex items-center justify-center text-yellow-500 text-lg">
-                                    <IoIosStar />
-                                    <IoIosStar />
-                                    <IoIosStar />
-                                    <IoIosStar className="text-stone-300" />
-                                    <IoIosStar className="text-stone-300" />
-                                    <p className="text-text-color-black/70 text-sm font-medium pl-1 pt-[4px]">4.8</p>
-                                </div>
-                                <div className="py-2 text-center">
-                                    <h1 className="text-3xl font-bold pb-2">$2.00</h1>
-                                    <p className="text-xs font-medium text-text-color-black/70">Minimum Equity to Invest</p>
-                                </div>
-                                <div className="w-full grid grid-cols-2 gap-5 text-text-color-black/70 mt-2 p-3">
-                                    <div className="flex flex-col gap-1 text-sm font-medium justify-start items-start">
-                                        <span>Pool ID: </span>
-                                        <span>Pool Size: </span>
-                                        <span>Target: </span>
-                                        <span>Withdraws: </span>
-                                        <span>Assets Traded: </span>
-                                        <span>Amount Invested so far: </span>
-                                        <span>Pool Administrator: </span>
+                                    <Input placeholder="Search pool name or pool administrator" style={{ width: "230px" }} />
+                                </ConfigProvider>
+                            </form>
+                        </div>
+                        <div className="grid grid-cols-4 mt-3">
+                            {/* Pool */}
+                            {Pools.map((pool, index) => (
+                                <div className="w-full h-fit bg-stone-100/50 ring-1 ring-stone-200 flex flex-col items-center justify-start p-3">
+                                    <div className="w-12 h-12 rounded-full mt-2">
+                                        <img
+                                            src={pool.avatar}
+                                            className="w-full h-full rounded-full object-cover object-center"
+                                        />
                                     </div>
-                                    <div className="flex flex-col gap-1 text-sm font-medium justify-start items-start">
-                                        <span>0989563</span>
-                                        <span>$20</span>
-                                        <span>$200</span>
-                                        <span>Every 24 hours</span>
-                                        <span>Currencies</span>
-                                        <span>$16</span>
-                                        <Link to={'/'} className="text-text-color-black hover:underline">John Doe</Link>
+                                    <h1 className="text-base font-medium py-2">{pool.name}</h1>
+                                    <div className="flex items-center justify-center text-yellow-500 text-base">
+                                        <IoIosStar />
+                                        <IoIosStar />
+                                        <IoIosStar />
+                                        <IoIosStar className="text-stone-300" />
+                                        <IoIosStar className="text-stone-300" />
+                                        <p className="text-text-color-black/70 text-xs font-medium pl-1 pt-[4px]">{pool.rate}</p>
+                                    </div>
+                                    <div className="py-2 text-center">
+                                        <h1 className="text-2xl font-bold pb-1">{pool.minimumEquity}</h1>
+                                        <p className="text-xs font-medium text-text-color-black/70">Minimum Equity to Invest</p>
+                                    </div>
+                                    <div className="w-full flex gap-5 text-text-color-black/70 p-3">
+                                        <div className="w-full flex flex-col gap-1 text-xs font-medium justify-start items-start">
+                                            <div className="flex items-start justify-between w-full">
+                                                <span>Pool ID: </span>
+                                                <span>{pool.id}</span>
+                                            </div>
+                                            <div className="flex items-start justify-between w-full">
+                                                <span>Pool Size: </span>
+                                                <span>{pool.size}</span>
+                                            </div>
+                                            <div className="flex items-start justify-between w-full">
+                                                <span>Target: </span>
+                                                <span>{pool.target}</span>
+                                            </div>
+                                            <div className="flex items-start justify-between w-full">
+                                                <span>Withdraws: </span>
+                                                <span>{pool.withdraws}</span>
+                                            </div>
+                                            <div className="flex items-start justify-between w-full">
+                                                <span>Assets Traded: </span>
+                                                <span>{pool.assetsTraded}</span>
+                                            </div>
+                                            <div className="flex items-start justify-between w-full">
+                                                <span>Amount Invested so far: </span>
+                                                <span>{pool.amountInvested}</span>
+                                            </div>
+                                            <div className="flex items-start justify-between w-full">
+                                                <span>Pool Administrator: </span>
+                                                <Link to={'/'} className="font-bold hover:underline">{pool.administrator.name}</Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="w-full flex items-center justify-center p-2">
+                                        <button
+                                            className={`w-full max-w-[150px] text-sm px-4 py-2 text-text-color-white font-semibold tracking-tight bg-button-color hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-1`}
+                                        >
+                                            Join Pool
+                                        </button>
                                     </div>
                                 </div>
-                                <div className="w-full flex items-center justify-center p-2">
-                                    <button
-                                        className={`w-full max-w-[150px] text-sm px-4 py-2 text-text-color-white font-semibold tracking-tight bg-button-color hover:opacity-80 transition border-b-2 border-transparent flex items-center justify-center gap-1`}
-                                    >
-                                        Join Pool
-                                    </button>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </div>
