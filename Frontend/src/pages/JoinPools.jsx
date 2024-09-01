@@ -263,7 +263,7 @@ function JoinPools() {
                         <div className="grid max-sm:grid-cols-1 max-md:grid-cols-2 max-xl:grid-cols-3 max-2xl:grid-cols-4 grid-cols-5 gap-4 mt-3">
                             {/* Pool */}
                             {Pools.map((pool, index) => (
-                                <div className="w-full h-fit bg-stone-100/50 ring-1 ring-stone-200 flex flex-col items-center justify-start p-3">
+                                <div className="w-full h-fit bg-stone-50 ring-1 ring-stone-200 flex flex-col items-center justify-start p-3">
                                     <div className="w-12 h-12 rounded-full mt-2">
                                         {pool.avatar ? (
                                             <img
