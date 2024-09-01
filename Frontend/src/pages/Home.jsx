@@ -239,7 +239,7 @@ function Home() {
                                 <span>
                                     <CountUp
                                         isCounting
-                                        end={1320.32048248}
+                                        end={121320.30}
                                         duration={0.9}
                                         decimalSeparat="."
                                         thousandsSeparator=","
@@ -296,26 +296,21 @@ function Home() {
                                     <TbCoins className="text-stone-500 text-2xl" />
                                 </div>
                             </div>
-                            <div className="w-full pt-0">
+                            <div className="w-full pt-0 text-2xl font-extrabold">
                                 {/* Profit */}
-                                {/* <CountUp
-                                    start={0}
-                                    end={49.5}
-                                    duration={0.9}
-                                    separator=","
-                                    decimals={2}
-                                    decimal="."
-                                    prefix="$ "
-                                >
-                                    {({ countUpRef }) => (
-                                        <div className="">
-                                            <span
-                                                className=" text-2xl font-extrabold"
-                                                ref={countUpRef}
-                                            />
-                                        </div>
-                                    )}
-                                </CountUp> */}
+                                <h1 className="flex items-center justify-start gap-1">
+                                    <span>$</span>
+                                    <span>
+                                        <CountUp
+                                            isCounting
+                                            end={2219.00}
+                                            duration={0.9}
+                                            decimalSeparat="."
+                                            thousandsSeparator=","
+                                            decimalPlaces={2}
+                                        />
+                                    </span>
+                                </h1>
                                 <p className="text-xs pt-2 text-text-color-black/60 font-medium ">
                                     <span className="text-red-500">0.9%</span> descrease for the
                                     last 7 days
@@ -332,26 +327,21 @@ function Home() {
                                     <TbLayoutAlignCenter className="text-stone-500 text-2xl" />
                                 </div>
                             </div>
-                            <div className="w-full pt-0">
+                            <div className="w-full pt-0 text-2xl font-extrabold">
                                 {/* Margin */}
-                                {/* <CountUp
-                                    start={0}
-                                    end={92405}
-                                    duration={0.9}
-                                    separator=","
-                                    decimals={2}
-                                    decimal="."
-                                    prefix="$ "
-                                >
-                                    {({ countUpRef }) => (
-                                        <div className="">
-                                            <span
-                                                className=" text-2xl font-extrabold"
-                                                ref={countUpRef}
-                                            />
-                                        </div>
-                                    )}
-                                </CountUp> */}
+                                <h1 className="flex items-center justify-start gap-1">
+                                    <span>$</span>
+                                    <span>
+                                        <CountUp
+                                            isCounting
+                                            end={43239.49}
+                                            duration={0.9}
+                                            decimalSeparat="."
+                                            thousandsSeparator=","
+                                            decimalPlaces={2}
+                                        />
+                                    </span>
+                                </h1>
                                 <p className="text-xs pt-2 text-text-color-black/60 font-medium ">
                                     <span className="text-green-600">32%</span> increase for the
                                     last 7 days
@@ -368,26 +358,21 @@ function Home() {
                                     <TbLayoutAlignCenter className="text-stone-500 text-2xl" />
                                 </div>
                             </div>
-                            <div className="w-full pt-0">
+                            <div className="w-full pt-0 text-2xl font-extrabold">
                                 {/* Free Margin */}
-                                {/* <CountUp
-                                    start={0}
-                                    end={32218.2}
-                                    duration={0.9}
-                                    separator=","
-                                    decimals={2}
-                                    decimal="."
-                                    prefix="$ "
-                                >
-                                    {({ countUpRef }) => (
-                                        <div className="">
-                                            <span
-                                                className=" text-2xl font-extrabold"
-                                                ref={countUpRef}
-                                            />
-                                        </div>
-                                    )}
-                                </CountUp> */}
+                                <h1 className="flex items-center justify-start gap-1">
+                                    <span>$</span>
+                                    <span>
+                                        <CountUp
+                                            isCounting
+                                            end={323949.90}
+                                            duration={0.9}
+                                            decimalSeparat="."
+                                            thousandsSeparator=","
+                                            decimalPlaces={2}
+                                        />
+                                    </span>
+                                </h1>
                                 <p className="text-xs pt-2 text-text-color-black/60 font-medium ">
                                     <span className="text-green-600">2%</span> increase for the
                                     last 7 days
@@ -404,26 +389,20 @@ function Home() {
                                     <TbKeyframes className="text-stone-500 text-2xl" />
                                 </div>
                             </div>
-                            <div className="w-full pt-0">
-                                {/* Balance */}
-                                {/* <CountUp
-                                    start={0}
-                                    end={405}
-                                    duration={0.9}
-                                    separator=","
-                                    decimals={2}
-                                    decimal="."
-                                    suffix=" %"
-                                >
-                                    {({ countUpRef }) => (
-                                        <div className="">
-                                            <span
-                                                className=" text-2xl font-extrabold"
-                                                ref={countUpRef}
-                                            />
-                                        </div>
-                                    )}
-                                </CountUp> */}
+                            <div className="w-full pt-0 text-2xl font-extrabold">
+                                {/* Margin Level */}
+                                <h1 className="flex items-center justify-start gap-1">
+                                    <span>
+                                        <CountUp
+                                            isCounting
+                                            end={405}
+                                            duration={0.9}
+                                            decimalSeparat="."
+                                            thousandsSeparator=","
+                                        />
+                                    </span>
+                                    <span>%</span>
+                                </h1>
                                 <p className="text-xs pt-2 text-text-color-black/60 font-medium ">
                                     <span className="text-green-600">73%</span> increase for the
                                     last 7 days
