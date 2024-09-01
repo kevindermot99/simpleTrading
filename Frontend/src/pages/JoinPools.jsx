@@ -265,22 +265,25 @@ function JoinPools() {
                                 <div className="w-full h-fit bg-stone-100/50 ring-1 ring-stone-200 flex flex-col items-center justify-start p-3">
                                     <div className="w-12 h-12 rounded-full mt-2">
                                         {pool.avatar ? (
-                                        <img
-                                            src={pool.avatar}
-                                            className="w-full h-full rounded-full object-cover object-center"
-                                        />) : (
+                                            <img
+                                                src={pool.avatar}
+                                                className="w-full h-full rounded-full object-cover object-center"
+                                            />) : (
                                             <h1 className="w-full h-full rounded-full bg-white text-text-color-black text-2xl font-bold flex items-center justify-center">
                                                 {pool.name.charAt(0)}
                                             </h1>
                                         )}
                                     </div>
                                     <h1 className="text-base font-medium py-2">{pool.name}</h1>
-                                    <div className="flex items-center justify-center text-yellow-500 text-base">
-                                        <IoIosStar />
-                                        <IoIosStar />
-                                        <IoIosStar />
-                                        <IoIosStar className="text-stone-300" />
-                                        <IoIosStar className="text-stone-300" />
+                                    <div className="flex items-center justify-center text-base">
+                                        {[...Array(Math.floor(pool.rate))].map((star, index) => (
+                                            <IoIosStar className="text-yellow-500 " />
+                                        ))}
+                                        {pool.rate < 5 && (
+                                            [...Array(5 - Math.floor(pool.rate))].map((star, index) => (
+                                                <IoIosStar className="text-stone-300" />
+                                            ))
+                                        )}
                                         <p className="text-text-color-black/70 text-xs font-medium pl-1 pt-[4px]">{pool.rate}</p>
                                     </div>
                                     <div className="py-2 text-center">
