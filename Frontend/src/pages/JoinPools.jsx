@@ -259,7 +259,7 @@ function JoinPools() {
                                 </ConfigProvider>
                             </form>
                         </div>
-                        <div className="grid grid-cols-4 gap-4 mt-3">
+                        <div className="grid max-sm:grid-cols-1 max-md:grid-cols-2 max-xl:grid-cols-3 max-2xl:grid-cols-4 grid-cols-5 gap-4 mt-3">
                             {/* Pool */}
                             {Pools.map((pool, index) => (
                                 <div className="w-full h-fit bg-stone-100/50 ring-1 ring-stone-200 flex flex-col items-center justify-start p-3">
@@ -269,7 +269,7 @@ function JoinPools() {
                                             src={pool.avatar}
                                             className="w-full h-full rounded-full object-cover object-center"
                                         />) : (
-                                            <h1 className="w-full h-full rounded-full bg-white text-text-color-black text-3xl">
+                                            <h1 className="w-full h-full rounded-full bg-white text-text-color-black text-2xl font-bold flex items-center justify-center">
                                                 {pool.name.charAt(0)}
                                             </h1>
                                         )}
