@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { Select, ConfigProvider } from "antd";
-import CountUp from "react-countup";
 import { LuArrowDownFromLine, LuExternalLink } from "react-icons/lu";
 import { TiArrowDownThick, TiArrowUpThick } from "react-icons/ti";
 import {
